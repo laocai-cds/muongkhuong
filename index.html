@@ -3,22 +3,22 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#5a0d13">
-<meta name="description" content="Theo dõi tình hình thu nộp đảng phí tại Đảng bộ xã Bảo Thắng.">
-<title>Hệ thống theo dõi thu nộp đảng phí · Đảng bộ xã Bảo Thắng</title>
+<meta name="theme-color" content="#ffffff">
+<meta name="description" content="Theo dõi tình hình thu nộp đảng phí tại Đảng bộ xã Mường Khương.">
+<title>Hệ thống theo dõi thu nộp đảng phí · Đảng bộ xã Mường Khương</title>
 <meta property="og:type" content="website">
 <meta property="og:locale" content="vi_VN">
-<meta property="og:site_name" content="Đảng bộ xã Bảo Thắng">
-<meta property="og:title" content="Hệ thống theo dõi thu nộp đảng phí · Đảng bộ xã Bảo Thắng">
-<meta property="og:description" content="Theo dõi tiến độ thu nộp đảng phí của các chi bộ, đảng bộ trực thuộc Đảng bộ xã Bảo Thắng.">
-<meta property="og:url" content="https://laocai-cds.github.io/baothang/">
-<meta property="og:image" content="https://laocai-cds.github.io/baothang/og-image-v2.jpg">
+<meta property="og:site_name" content="Đảng bộ xã Mường Khương">
+<meta property="og:title" content="Hệ thống theo dõi thu nộp đảng phí · Đảng bộ xã Mường Khương">
+<meta property="og:description" content="Theo dõi tiến độ thu nộp đảng phí của các chi bộ, đảng bộ trực thuộc Đảng bộ xã Mường Khương.">
+<meta property="og:url" content="https://laocai-cds.github.io/muongkhuong/">
+<meta property="og:image" content="https://laocai-cds.github.io/muongkhuong/og-image-mk.jpg">
 <meta property="og:image:type" content="image/jpeg">
-<meta property="og:image:alt" content="Đảng bộ xã Bảo Thắng · Hệ thống theo dõi thu nộp đảng phí">
+<meta property="og:image:alt" content="Đảng bộ xã Mường Khương · Hệ thống theo dõi thu nộp đảng phí">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://laocai-cds.github.io/baothang/og-image-v2.jpg">
+<meta name="twitter:image" content="https://laocai-cds.github.io/muongkhuong/og-image-mk.jpg">
 <link rel="icon" type="image/png" href="logo.png">
 <link rel="apple-touch-icon" href="logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -27,9 +27,8 @@
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;700;800&family=Noto+Serif:wght@600;700&display=swap"></noscript>
 <style>
 /* =========================================================
-   Đảng bộ xã Bảo Thắng · Hệ thống theo dõi thu nộp đảng phí
-   Giao diện "Văn kiện": nền giấy ngà, thanh điều hướng đỏ son,
-   chỉ vàng, chữ có chân cho tiêu đề.
+   Đảng bộ xã Mường Khương · Hệ thống theo dõi thu nộp đảng phí
+   Lớp gốc dùng chung; lớp "Bảng điều hành tối giản" ở cuối khối style.
    ========================================================= */
 :root{
   --son:#b3141c;--son-d:#8c0f16;--son-dd:#650a10;--son-l:#d4262e;
@@ -616,6 +615,231 @@ label.f{display:block;font-size:13px;font-weight:600;margin:14px 0 6px;color:var
 .notice .livepill svg{color:var(--son);flex:none}
 .notice .livepill .ldot{background:#22a35a;box-shadow:0 0 0 0 #22a35a99}
 @media(max-width:1023px){.notice .livepill{display:flex}.notice .livepill small{display:none}.notice .livepill .lp{padding:0 10px;gap:6px}.notice .livepill b{font-size:13px}}
+/* =========================================================
+   Đảng bộ xã Mường Khương · Giao diện "Bảng điều hành tối giản"
+   Nền trắng xám, một màu nhấn đỏ, chữ không chân, lưới 2 cột.
+   ========================================================= */
+:root{
+  --son:#b91c1c;--son-d:#991b1b;--son-dd:#7f1d1d;--son-l:#dc2626;
+  --vang:#b45309;--vang-l:#f59e0b;--vang-bg:#fef6e7;
+  --ngoc:#15803d;--ngoc-bg:#e8f5ec;
+  --ho:#c2410c;--ho-bg:#fdf0e6;
+  --do:#b91c1c;--do-bg:#fdecec;
+  --xam:#94a3b8;--xam-bg:#f1f5f9;
+  --giay:#f5f6f8;--giay-2:#eef0f3;--paper:#fff;
+  --ink:#0f172a;--ink-2:#334155;--muted:#64748b;
+  --rule:#e2e8f0;--rule-2:#eef1f5;
+  --serif:var(--sans);
+  --side:0px;--r:12px;--r-s:8px;--barh:64px;
+  --sh:0 1px 2px #0f172a0a;
+}
+body{background:var(--giay)}
+body::before{display:none}
+:focus-visible{outline-color:var(--son)}
+
+/* thanh trên cùng */
+.bar{position:sticky;top:0;left:auto;bottom:auto;width:auto;height:auto;color:var(--ink);background:#fff;border-right:0;border-bottom:1px solid var(--rule);box-shadow:none;overflow:visible}
+.bar::before{content:'';position:absolute;left:0;right:0;top:0;bottom:auto;width:auto;height:3px;transform:none;opacity:1;background:var(--son)}
+.brand{border:0;padding:0;margin:0}
+.seal{width:40px;height:40px;border-radius:10px;box-shadow:0 0 0 1px var(--rule)}
+.brand b{font:800 15px/1.2 var(--sans);color:var(--son-d);background:none;-webkit-text-fill-color:currentColor;filter:none;letter-spacing:.04em}
+.brand small{display:block;margin-top:2px;font-size:11.5px;font-weight:500;color:var(--muted);letter-spacing:0;text-transform:none}
+.bar .btn{background:var(--paper);border:1px solid var(--rule);color:var(--ink-2)}
+.bar .btn:hover{background:var(--giay);border-color:#cbd5e1}
+.bar #reportBtn{background:var(--son);border-color:var(--son);color:#fff}
+.bar #reportBtn:hover{background:var(--son-l);filter:none}
+@media(min-width:1024px){
+  .bar .wrap{flex-direction:row;align-items:center;gap:24px;height:var(--barh);padding:3px 32px 0;max-width:var(--wrap)}
+  .brand{flex:none}
+  .tabs{flex-direction:row;gap:2px;margin:0 auto;padding:4px;background:var(--giay);border:1px solid var(--rule);border-radius:12px}
+  .tabs::before{display:none}
+  .tab{width:auto;gap:8px;padding:7px 16px;border-radius:9px;color:var(--muted);font-size:13.5px}
+  .tab svg{width:17px;height:17px}
+  .tab:hover{background:#fff;color:var(--ink)}
+  .tab[aria-current=page]{background:#fff;color:var(--son-d);box-shadow:0 1px 3px #0f172a1f;font-weight:700}
+  .tab[aria-current=page]::before{display:none}
+  .tab[aria-current=page] svg{color:var(--son)}
+  .barright{margin:0;flex-direction:row;gap:8px}
+  .barright::before{display:none}
+  .bar .btn{width:auto;padding:8px 14px;border-radius:9px}
+}
+@media(max-width:1023px){
+  .bar .wrap{padding:13px 16px 10px}
+  .brand small{display:none}
+  .brand b{font-size:12.5px;letter-spacing:.02em;white-space:normal}
+  .tab[aria-current=page]{background:#b91c1c0d}
+}
+
+/* dải thông báo */
+.notice{position:relative;top:auto;height:38px;background:var(--paper)}
+.nt-badge{background:var(--son);color:#fff;border-right:0;padding:0 16px 0 32px}
+.nt-badge svg{color:#fff}
+.nt-text{font-weight:500;color:var(--ink-2)}
+.notice .livepill{background:var(--paper)}
+.notice .livepill b{font-family:var(--sans);color:var(--ink)}
+
+/* đầu trang tổng quan */
+#overview.page{padding-top:28px}
+.ovhead{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;flex-wrap:wrap;margin-bottom:20px}
+.ovtitle{min-width:0}
+.eyebrow{margin:0 0 6px;font:600 12px var(--sans);letter-spacing:.04em;text-transform:none;color:var(--muted)}
+.ovhead h1{margin:0;font:800 clamp(1.4rem,2.2vw,1.9rem)/1.2 var(--sans);color:var(--ink);letter-spacing:-.015em}
+.lede{margin:6px 0 0;color:var(--muted);font-size:13.5px}
+.heroline{display:flex;flex-wrap:wrap;gap:8px;margin:0;padding:0;justify-content:flex-end}
+.heroline>div,.heroline>div:nth-child(2n){display:flex;align-items:baseline;gap:6px;padding:7px 12px;border:1px solid var(--rule);border-left:1px solid var(--rule);border-radius:99px;background:var(--paper)}
+.heroline b{display:inline;font:700 13.5px/1.2 var(--sans);color:var(--ink)}
+.heroline small{display:inline;margin:0;font-size:12px;color:var(--muted);order:-1}
+.loadnote{background:var(--paper);border-color:var(--rule);color:var(--ink-2)}
+.loadnote::before{border-color:#cbd5e1;border-top-color:var(--son)}
+.loadnote.warn{background:var(--vang-bg);border-color:#f3dcae;color:#7c4a03}
+.bt-loading #heroline b{background:linear-gradient(90deg,#eceef1 25%,#f7f8f9 50%,#eceef1 75%) 0 0/200% 100%}
+
+/* thẻ số liệu */
+.kpis{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;margin-bottom:28px}
+.stat{padding:18px 20px;border-radius:var(--r);box-shadow:var(--sh)}
+.stat::after{display:none}
+.stat .ico{width:34px;height:34px;border-radius:9px;background:var(--xam-bg);color:var(--muted)}
+.stat.k3 .ico{background:var(--ngoc-bg);color:var(--ngoc)}
+.stat.k4 .ico{background:var(--do-bg);color:var(--do)}
+.stat span{font:600 12.5px var(--sans);letter-spacing:0;text-transform:none;color:var(--muted)}
+.stat strong{font:800 clamp(1.45rem,2.3vw,2rem)/1.1 var(--sans);letter-spacing:-.02em;margin:12px 0 6px}
+.stat small b{color:var(--ink)}
+.stat.k3 small b{color:var(--ngoc)}
+
+/* lưới và nhãn nhóm */
+.glabel{display:flex;align-items:center;gap:12px;margin:8px 0 12px;font:700 11.5px var(--sans);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.glabel::after{content:'';flex:1;height:1px;background:var(--rule)}
+.g{display:grid;gap:16px;margin-bottom:16px}
+.g-21{grid-template-columns:minmax(0,1.7fr) minmax(0,1fr)}
+.g-11{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+.g>*{min-width:0;margin:0}
+#monthPanel,#tien-do{margin-bottom:16px}
+#tien-do+.glabel,#monthPanel+.glabel{margin-top:12px}
+
+/* khung */
+.panel{border-radius:var(--r);box-shadow:var(--sh)}
+.pad{padding:20px 22px}
+.ph{margin-bottom:16px}
+.ph h2{font:700 15px/1.35 var(--sans);color:var(--ink)}
+.ph h2::before{display:none}
+.ph small{font-size:12px}
+.pagehead h1,.h2{font:800 1.6rem/1.2 var(--sans);color:var(--ink);letter-spacing:-.015em}
+
+/* tóm tắt */
+.tomtat{margin:0;border-left:1px solid var(--rule);display:flex;flex-direction:column}
+.tomtat .tt-hint{margin-top:auto;padding-top:14px}
+#dan-dau{display:flex;flex-direction:column}
+#dan-dau .podium{flex:1;grid-auto-rows:1fr}
+.tt-text{font:400 15px/1.75 var(--sans);color:var(--ink-2)}
+.tt-text b{color:var(--ink)}
+
+/* biểu đồ tròn */
+.dpanel{padding:20px 22px;box-shadow:var(--sh)}
+.dhead b{font:700 15px/1.35 var(--sans)}
+.dbody{grid-template-columns:minmax(0,150px) minmax(0,1fr);gap:18px}
+.dcenter strong{font:800 1.5rem/1 var(--sans);color:var(--ink)}
+.dcenter span{max-width:96px;font-size:11px}
+.dgroup div{font-size:12.5px}
+
+/* tiến trình + tiền */
+.fn-row{grid-template-columns:130px minmax(0,1fr) 92px}
+.fn-bar{height:22px;border-radius:6px}
+.fn-bar i,.fn-row.s2 .fn-bar i,.fn-row.s3 .fn-bar i{border-radius:6px}
+.fn-bar i{background:#cbd5e1}
+.fn-row.s2 .fn-bar i{background:#94a3b8}
+.fn-row.s3 .fn-bar i{background:#64748b}
+.fn-row.s4 .fn-bar i{background:var(--ngoc)}
+.fn-val b{font:700 15px var(--sans)}
+.fn-loss{margin-left:144px}
+.mr-big strong{font:800 2.4rem/1 var(--sans);letter-spacing:-.02em}
+.mr-track{height:10px}
+.mr-track i{background:var(--ngoc)}
+.mr-cmp{background:var(--giay)}
+
+/* trạng thái + đôn đốc */
+#splitlegend span{background:var(--paper);border:1px solid var(--rule);border-top:3px solid var(--c)}
+#splitlegend b{font:800 1.4rem/1.1 var(--sans)}
+.chase .rk{background:var(--do-bg);color:var(--do)}
+.chase .bar2 i{background:var(--son)}
+.chase .cc{max-width:260px}
+
+/* top 3 dạng danh sách dọc */
+#dan-dau .podium{grid-template-columns:1fr;gap:10px}
+#dan-dau .podium .step{grid-template-columns:36px minmax(0,1fr) auto;grid-template-areas:"no b st" "no sm st" "pb pb pb";gap:2px 14px;padding:14px 16px 0;background:var(--paper);border-color:var(--rule)}
+#dan-dau .podium .step .no{align-self:center;font:700 14px/1 var(--sans)}
+#dan-dau .podium .step b{align-self:end;-webkit-line-clamp:1}
+#dan-dau .podium .step strong{align-self:center;margin:0;font:800 1.45rem/1 var(--sans)}
+#dan-dau .podium .step small{align-self:start}
+#dan-dau .podium .step{grid-template-rows:1fr 1fr auto}
+#dan-dau .podium .step .pb{margin:12px -16px 0;align-self:end}
+#dan-dau .podium .step.s1{--bar:var(--son);background:var(--paper);border-color:#f3c4c4}
+#dan-dau .podium .step.s1::after{display:none}
+#dan-dau .podium .step.s2{--bar:#475569}
+#dan-dau .podium .step.s3{--bar:#94a3b8}
+
+/* biểu đồ cột */
+.cb.complete{background:var(--ngoc)}
+.cb.partial{background:#f59e0b}
+.cb.empty{background:#cbd5e1}
+.col:hover{background:#0f172a08}
+.mkpi div{background:var(--paper);border:1px solid var(--rule);border-left:3px solid var(--c,var(--son))}
+.mkpi b{font:800 1.2rem/1.3 var(--sans)}
+.mcol i{background:#e2e8f0}
+.mcol:hover i{background:#cbd5e1}
+.mcol.cur i{background:#fca5a5}
+.mcol.sel{background:#b91c1c08;box-shadow:inset 0 0 0 1px #b91c1c26}
+.mcol.sel i{background:var(--son)}
+.mlab .cur{color:var(--son)}
+
+/* bảng */
+.tablepanel{margin-bottom:8px}
+th{background:#f8fafc;letter-spacing:.06em}
+.chip[aria-pressed=true]{background:var(--ink);border-color:var(--ink)}
+.track i.partial{background:#f59e0b}
+.rk.m1{background:var(--son);color:#fff;box-shadow:none}
+.rk.m2{background:#475569;color:#fff;box-shadow:none}
+.rk.m3{background:#94a3b8;color:#fff;box-shadow:none}
+.search:focus{box-shadow:0 0 0 3px #b91c1c1a}
+.input:focus{box-shadow:0 0 0 3px #b91c1c1a}
+
+/* trang nhập, cửa sổ, chân trang */
+.sn{background:var(--ink);color:#fff;font-family:var(--sans)}
+.drop h3{font-family:var(--sans);color:var(--ink)}
+.drop.over{background:#b91c1c08;border-color:var(--son)}
+.modal{border-top:3px solid var(--son)}
+.modal h3,.rptbox h3{font-family:var(--sans);color:var(--ink)}
+.rptbox{border-top:3px solid var(--son)}
+.toast{background:var(--ink);border-left-color:var(--son)}
+.cbm-head{background:var(--son-d)}
+.cbm-head small{color:#fecaca}
+.cbm-top strong{font-family:var(--sans)}
+.cbm-grid b{font-family:var(--sans)}
+.cr-ic{background:var(--son);color:#fff}
+.cr-t b,.copyr b{color:var(--ink)}
+.zalobar{background:var(--ink)}
+#viewBanner{margin:0 0 16px;border:1px solid #f3dcae;border-radius:10px}
+
+@media(max-width:1280px){.kpis{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:1100px){.g-21,.g-11{grid-template-columns:1fr}}
+@media(max-width:760px){
+  #overview.page{padding-top:18px}
+  .ovhead{flex-direction:column;align-items:stretch;gap:12px;margin-bottom:14px}
+  .heroline{justify-content:flex-start;gap:6px}
+  .heroline>div,.heroline>div:nth-child(2n){padding:5px 10px}
+  .kpis{gap:10px;margin-bottom:18px}
+  .stat{padding:14px}
+  .stat span{font-size:11.5px}
+  .stat strong{font-size:1.25rem}
+  .g{gap:12px;margin-bottom:12px}
+  .pad,.dpanel{padding:16px}
+  .dbody{grid-template-columns:1fr}
+  .fn-row{grid-template-columns:96px minmax(0,1fr) 78px}
+  .fn-loss{margin-left:0}
+  #dan-dau .podium .step strong{font-size:1.2rem}
+  #dan-dau .podium .step b{-webkit-line-clamp:2}
+  #dan-dau .podium{grid-auto-rows:auto}
+}
+@media(max-width:420px){.kpis{grid-template-columns:1fr 1fr}}
 </style>
 </head>
 <body>
@@ -624,7 +848,7 @@ label.f{display:block;font-size:13px;font-weight:600;margin:14px 0 6px;color:var
   <div class="wrap">
     <div class="brand">
       <div class="seal"><img src="logo.png" alt="Cờ Đảng" width="40" height="40" decoding="async"></div>
-      <div><b>Đảng bộ xã Bảo Thắng</b></div>
+      <div><b>Đảng bộ xã Mường Khương</b><small>Theo dõi thu nộp đảng phí</small></div>
     </div>
     <nav class="tabs" aria-label="Chuyên mục">
       <button class="tab" data-page="overview"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="9" rx="1.5"/><rect x="14" y="3" width="7" height="5" rx="1.5"/><rect x="14" y="12" width="7" height="9" rx="1.5"/><rect x="3" y="16" width="7" height="5" rx="1.5"/></svg><span>Tổng quan</span></button>
@@ -645,19 +869,28 @@ label.f{display:block;font-size:13px;font-weight:600;margin:14px 0 6px;color:var
   <button class="nt-set" id="ntSet" type="button" title="Cài đặt thông báo" aria-label="Cài đặt thông báo"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></svg></button>
 </section>
 
-<div class="scenic-box"><div class="wrap"><figure class="scenic"><img src="banner-bao-thang.jpg" alt="Phong cảnh Bảo Thắng nhìn từ trên cao" width="1920" height="696" decoding="async" fetchpriority="high"></figure></div></div>
-
 <main>
 <section class="page on" id="overview" aria-label="Tổng quan">
-  <div class="hero">
-    <div class="wrap">
-      <div>
+  <div class="wrap">
+    <div class="ovhead">
+      <div class="ovtitle">
         <p class="eyebrow">Bảng điều hành · <span id="heroDate"></span></p>
         <h1>Tình hình thu nộp đảng phí</h1>
-        <p class="lede">Đảng bộ xã Bảo Thắng · tổng hợp từ các chi bộ, đảng bộ trực thuộc</p>
+        <p class="lede">Đảng bộ xã Mường Khương · tổng hợp từ các chi bộ, đảng bộ trực thuộc</p>
         <p class="loadnote" id="loadNote" hidden></p>
-        <div class="heroline" id="heroline"></div>
       </div>
+      <div class="heroline" id="heroline"></div>
+    </div>
+
+    <div class="kpis" id="stats"></div>
+
+    <p class="glabel">Tổng quan nhanh</p>
+    <div class="g g-21">
+      <section class="panel pad tomtat" id="tom-tat" aria-label="Tóm tắt tình hình">
+        <div class="ph"><h2>Tóm tắt tình hình</h2><div class="tt-acts"><button class="btn solid tt-copy" id="ttRemind" type="button"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8.5 8.5 0 0 1-12.4 7.6L3 21l1.4-5.4A8.5 8.5 0 1 1 21 12z"/></svg>Đôn đốc đơn vị chưa đạt</button><button class="btn tt-copy" id="ttCopy" type="button"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg>Sao chép</button></div></div>
+    <p class="tt-text" id="ttText"></p>
+    <p class="tt-hint">Đoạn này tự viết từ số liệu đang hiển thị, dán thẳng vào báo cáo hoặc tin nhắn được. Bấm tên một đơn vị trong bảng để xem thẻ và nhắn tin đôn đốc riêng đơn vị đó.</p>
+      </section>
       <aside class="dpanel" aria-label="Biểu đồ tròn tình hình thu">
         <div class="dhead"><b>Tình hình thu toàn Đảng bộ</b><small>Vòng ngoài là đảng viên, vòng trong là đơn vị</small></div>
         <div class="dbody">
@@ -666,24 +899,34 @@ label.f{display:block;font-size:13px;font-weight:600;margin:14px 0 6px;color:var
         </div>
       </aside>
     </div>
-  </div>
-  <div class="strip"><div class="wrap" id="stats"></div></div>
-  <div class="wrap"><section class="panel pad tomtat" id="tom-tat" aria-label="Tóm tắt tình hình">
-    <div class="ph"><h2>Tóm tắt tình hình</h2><div class="tt-acts"><button class="btn solid tt-copy" id="ttRemind" type="button"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8.5 8.5 0 0 1-12.4 7.6L3 21l1.4-5.4A8.5 8.5 0 1 1 21 12z"/></svg>Đôn đốc đơn vị chưa đạt</button><button class="btn tt-copy" id="ttCopy" type="button"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg>Sao chép</button></div></div>
-    <p class="tt-text" id="ttText"></p>
-    <p class="tt-hint">Đoạn này tự viết từ số liệu đang hiển thị, dán thẳng vào báo cáo hoặc tin nhắn được. Bấm tên một đơn vị trong bảng để xem thẻ và nhắn tin đôn đốc riêng đơn vị đó.</p>
-  </section></div>
-  <div class="wrap"><div class="kp2" id="chi-tieu">
-    <div class="panel pad" id="tien-trinh-ho-so"><div class="ph"><h2>Tiến trình hồ sơ đảng phí</h2><small>Số đảng viên qua từng bước: kê khai → duyệt → nộp</small></div><div id="funnel"></div></div>
-    <div class="panel pad" id="thu-theo-tien"><div class="ph"><h2>Tỷ lệ thu theo tiền</h2><small>Đã nộp so với số tiền kê khai</small></div><div id="moneyRate"></div></div>
-  </div></div>
-
-  <div class="wrap">
-    <div class="panel pad" style="margin-bottom:20px">
-      <div class="ph"><h2>Top 3 đơn vị dẫn đầu</h2><small>Xếp theo tiến độ; đồng hạng thì xét số tiền đã nộp</small></div>
-      <div class="podium" id="podium"></div>
+    <div class="g g-11" id="chi-tieu">
+      <div class="panel pad" id="tien-trinh-ho-so"><div class="ph"><h2>Tiến trình hồ sơ đảng phí</h2><small>Số đảng viên qua từng bước: kê khai → duyệt → nộp</small></div><div id="funnel"></div></div>
+      <div class="panel pad" id="thu-theo-tien"><div class="ph"><h2>Tỷ lệ thu theo tiền</h2><small>Đã nộp so với số tiền kê khai</small></div><div id="moneyRate"></div></div>
     </div>
-    <div class="panel pad" style="margin-bottom:20px">
+
+    <p class="glabel">Cần đôn đốc và dẫn đầu</p>
+    <div class="g g-11">
+      <div class="panel pad" id="trang-thai">
+        <div class="ph"><h2>Trạng thái các đơn vị</h2><small>Đơn vị còn hồ sơ tồn nhiều nhất lên đầu</small></div>
+        <div class="split" id="split" role="img"></div>
+        <div class="legend" id="splitlegend"></div>
+        <p class="sub">Cần đôn đốc hồ sơ</p>
+        <div id="chase"></div>
+      </div>
+      <div class="panel pad" id="dan-dau">
+        <div class="ph"><h2>Top 3 đơn vị dẫn đầu</h2><small>Xếp theo tiến độ; đồng hạng thì xét số tiền đã nộp</small></div>
+        <div class="podium" id="podium"></div>
+      </div>
+    </div>
+
+    <p class="glabel">Diễn biến và so sánh</p>
+    <div class="panel pad" id="monthPanel">
+      <div class="ph"><h2>Thu đảng phí theo tháng</h2><small id="monthYear"></small></div>
+      <div class="mkpi" id="monthKpi"></div>
+      <div class="mchart" id="monthChart" role="img" aria-label="Biểu đồ số tiền thu theo từng tháng"></div>
+      <p class="mnote" id="monthNote"></p>
+    </div>
+    <div class="panel pad" id="tien-do">
       <div class="ph"><h2>Tiến độ theo đơn vị</h2><small>Đảng viên đã nộp trên tổng số đảng viên (trừ miễn giảm), mỗi cột là một đơn vị</small></div>
       <div class="chartwrap play">
         <div class="yax" aria-hidden="true"><span>100%</span><span>50%</span><span>0%</span></div>
@@ -691,22 +934,8 @@ label.f{display:block;font-size:13px;font-weight:600;margin:14px 0 6px;color:var
       </div>
       <div class="legend" id="chartlegend" style="margin:16px 0 0"></div>
     </div>
-    <div class="panel pad" id="monthPanel" style="margin-bottom:20px">
-      <div class="ph"><h2>Thu đảng phí theo tháng</h2><small id="monthYear"></small></div>
-      <div class="mkpi" id="monthKpi"></div>
-      <div class="mchart" id="monthChart" role="img" aria-label="Biểu đồ số tiền thu theo từng tháng"></div>
-      <p class="mnote" id="monthNote"></p>
-    </div>
-    <div class="cols">
-      <div class="panel pad">
-        <div class="ph"><h2>Trạng thái các đơn vị</h2></div>
-        <div class="split" id="split" role="img"></div>
-        <div class="legend" id="splitlegend"></div>
-        <p class="sub">Cần đôn đốc hồ sơ</p>
-        <div id="chase"></div>
-      </div>
-    </div>
 
+    <p class="glabel">Chi tiết từng đơn vị</p>
     <div class="panel tablepanel">
       <div class="thead">
         <div class="ph"><h2>Tình hình các đơn vị</h2><small id="rowcount"></small></div>
@@ -811,7 +1040,7 @@ label.f{display:block;font-size:13px;font-weight:600;margin:14px 0 6px;color:var
 </section>
 </main>
 
-<footer class="foot"><div class="wrap"><div class="credit"><span class="cr-ic" aria-hidden="true">★</span><div class="cr-t"><span class="cr-k">Thiết kế và phát triển</span><b>Nguyễn Trần Giáp</b><span class="cr-o">Văn phòng Đảng ủy xã Bảo Thắng</span></div></div><p class="copyr"><span aria-hidden="true">©</span> Bản quyền 2026: <b>Đảng ủy xã Bảo Thắng</b></p></div></footer>
+<footer class="foot"><div class="wrap"><div class="credit"><span class="cr-ic" aria-hidden="true">★</span><div class="cr-t"><span class="cr-k">Thiết kế và phát triển</span><b>Nguyễn Trần Giáp</b><span class="cr-o">Văn phòng Đảng ủy xã Mường Khương</span></div></div><p class="copyr"><span aria-hidden="true">©</span> Bản quyền 2026: <b>Đảng ủy xã Mường Khương</b></p></div></footer>
 
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 <div class="back" id="ntModal" role="dialog" aria-modal="true" aria-labelledby="ntTitle">
@@ -845,7 +1074,7 @@ label.f{display:block;font-size:13px;font-weight:600;margin:14px 0 6px;color:var
 </div>
 
 <script>
-const INITIAL_UNITS=[{"STT":"1","Tên đơn vị":"Chi bộ Ban Quản lý rừng phòng hộ khu vực Văn Bàn","Tổng sl đảng viên (1)":"23","Số lượng ĐV sinh hoạt chính thức (2)":"23","Số lượng ĐV sinh hoạt tạm thời (3)":"0","Số lượng ĐV đã chuyển sinh hoạt đảng tạm thời (4)":"0","Số lượng được miễn giảm ĐP (5)":"0","Chưa duyệt (6)":"0","Đã duyệt, chưa nộp (7)":"0","Đã duyệt, đã nộp (8)":"23","Số đảng viên chưa có hồ sơ (9)":"0","Tổng tiền theo hồ sơ đã khai báo":2250000,"Tổng tiền đã nộp":2250000,"Tỷ lệ hoàn thành\n đảng phí thực tế":1},{"STT":"2","Tên đơn vị":"Chi bộ Ban Xây dựng Đảng","Tổng sl đảng viên (1)":"7","Số lượng ĐV sinh hoạt chính thức (2)":"7","Số lượng ĐV sinh hoạt tạm thời (3)":"0","Số lượng ĐV đã chuyển sinh hoạt đảng tạm thời (4)":"0","Số lượng được miễn giảm ĐP (5)":"0","Chưa duyệt (6)":"0","Đã duyệt, chưa nộp (7)":"0","Đã duyệt, đã nộp (8)":"6","Số đảng viên chưa có hồ sơ (9)":"1","Tổng tiền theo hồ sơ đã khai báo":539000,"Tổng tiền đã nộp":539000,"Tỷ lệ hoàn thành\n đảng phí thực tế":1},{"STT":"3","Tên đơn vị":"Chi bộ Ban quản lý dự án đầu tư xây dựng","Tổng sl đảng viên (1)":"23","Số lượng ĐV sinh hoạt chính thức (2)":"23","Số lượng ĐV sinh hoạt tạm thời (3)":"0","Số lượng ĐV đã chuyển sinh hoạt đảng tạm thời (4)":"0","Số lượng được miễn giảm ĐP (5)":"0","Chưa duyệt (6)":"0","Đã duyệt, chưa nộp (7)":"1","Đã duyệt, đã nộp (8)":"22","Số đảng viên chưa có hồ sơ (9)":"0","Tổng tiền theo hồ sơ đã khai báo":1937000,"Tổng tiền đã nộp":1861000,"Tỷ lệ hoàn thành\n đảng phí thực tế":0.9608},{"STT":"4","Tên đơn vị":"Chi bộ Bưu điện","Tổng sl đảng viên (1)":"8","Số lượng ĐV sinh hoạt chính thức (2)":"8","Số lượng ĐV sinh hoạt tạm thời (3)":"0","Số lượng ĐV đã chuyển sinh hoạt đảng tạm thời (4)":"0","Số lượng được miễn giảm ĐP (5)":"0","Chưa duyệt (6)":"0","Đã duyệt, chưa nộp (7)":"0","Đã duyệt, đã nộp (8)":"0","Số đảng viên chưa có hồ sơ (9)":"8","Tổng tiền theo hồ sơ đã khai báo":0,"Tổng tiền đã nộp":0,"Tỷ lệ hoàn thành\n đảng phí thực tế":0},{"STT":"5","Tên đơn vị":"Chi bộ Chi nhánh Văn phòng đăng kí đất đai khu vực Bảo Thắng","Tổng sl đảng viên (1)":"8","Số lượng ĐV sinh hoạt chính thức (2)":"8","Số lượng ĐV sinh hoạt tạm thời (3)":"0","Số lượng ĐV đã chuyển sinh hoạt đảng tạm thời (4)":"0","Số lượng được miễn giảm ĐP (5)":"0","Chưa duyệt (6)":"7","Đã duyệt, chưa nộp (7)":"0","Đã duyệt, đã nộp (8)":"0","Số đảng viên chưa có hồ sơ (9)":"1","Tổng tiền theo hồ sơ đã khai báo":605000,"Tổng tiền đã nộp":0,"Tỷ lệ hoàn thành\n đảng phí thực tế":0},{"STT":"6","Tên đơn vị":"Chi bộ Công ty CP Lâm nghiệp","Tổng sl đảng viên (1)":"5","Số lượng ĐV sinh hoạt chính thức (2)":"5","Số lượng ĐV sinh hoạt tạm thời (3)":"0","Số lượng ĐV đã chuyển sinh hoạt đảng tạm thời (4)":"0","Số lượng được miễn giảm ĐP (5)":"0","Chưa duyệt (6)":"5","Đã duyệt, chưa nộp (7)":"0","Đã duyệt, đã nộp (8)":"0","Số đảng viên chưa có hồ sơ (9)":"0","Tổng tiền theo hồ sơ đã khai báo":362000,"Tổng tiền đã nộp":0,"Tỷ lệ hoàn thành\n đảng phí thực tế":0},{"STT":"7","Tên đơn vị":"Chi bộ Công ty CP đường bộ 242","Tổng sl đảng viên (1)":"17","Số lượng ĐV sinh hoạt chính thức (2)":"17","Số lượng ĐV sinh hoạt tạm thời (3)":"0","Số lượng ĐV đã chuyển sinh hoạt đảng tạm thời (4)":"0","Số lượng được miễn giảm ĐP (5)":"0","Chưa duyệt (6)":"0","Đã duyệt, chưa nộp (7)":"0","Đã duyệt, đã nộp (8)":"0","Số đảng viên chưa có hồ sơ (9)":"17","Tổng tiền theo hồ sơ đã khai báo":0,"Tổng tiền đã nộp":0,"Tỷ lệ hoàn thành\n đảng phí thực tế":0},{"STT":"8","Tên đơn vị":"Chi bộ Doanh nghiệp tư nhân Nguyễn Công Chiểu","Tổng sl đảng viên (1)":"7","Số lượng ĐV sinh hoạt chính thức (2)":"7","Số lượng ĐV sinh hoạt tạm thời (3)":"0","Số lượng ĐV đã chuyển sinh hoạt đảng tạm thời (4)":"0","Số lượng được miễn giảm ĐP (5)":"0","Chưa duyệt (6)":"0","Đã duyệt, chưa nộp (7)":"0","Đã duyệt, đã nộp (8)":"0","Số đảng viên chưa có hồ sơ (9)":"7","Tổng tiền theo hồ sơ đã khai báo":0,"Tổng tiền đã nộp":0,"Tỷ lệ hoàn thành\n đảng phí thực tế":0},{"STT":"9","Tên đơn vị":"Chi bộ Hạt kiểm lâm","Tổng sl đảng viên (1)":"24","Số lượng ĐV sinh hoạt chính thức (2)":"24","Số lượng ĐV sinh hoạt tạm thời (3)":"0","Số lượng ĐV đã chuyển sinh hoạt đảng tạm thời (4)":"0","Số lượng được miễn giảm ĐP (5)":"0","Chưa duyệt (6)":"0","Đã duyệt, chưa nộp (7)":"0","Đã duyệt, đã nộp (8)":"0","Số đảng viên chưa có hồ sơ (9)":"24","Tổng tiền theo hồ sơ đã khai báo":0,"Tổng tiền đã nộp":0,"Tỷ lệ hoàn thành\n đảng phí thực tế":0},{"STT":"10","Tên đơn vị":"Chi bộ Ngân hàng chính sách xã hội","Tổng sl đảng viên (1)":"12","Số lượng ĐV sinh hoạt chính thức (2)":"12","Số lượng ĐV sinh hoạt tạm thời (3)":"0","Số lượng ĐV đã chuyển sinh hoạt đảng tạm thời (4)":"0","Số lượng được miễn giảm ĐP (5)":"0","Chưa duyệt (6)":"0","Đã duyệt, chưa nộp (7)":"0","Đã duyệt, đã nộp (8)":"0","Số đảng viên chưa có hồ sơ (9)":"12","Tổng tiền theo hồ sơ đã khai báo":0,"Tổng tiền đã nộp":0,"Tỷ lệ hoàn thành\n đảng phí thực tế":0},{"STT":"11","Tên đơn vị":"Chi bộ Phòng Kinh tế","Tổng sl đảng viên (1)":"14","Số lượng ĐV sinh hoạt chính thức (2)":"14","Số lượng ĐV sinh hoạt tạm thời (3)":"0","Số lượng ĐV đã chuyển sinh hoạt đảng tạm thời (4)":"0","Số lượng được miễn giảm ĐP (5)":"0","Chưa duyệt (6)":"1","Đã duyệt, chưa nộp (7)":"0","Đã duyệt, đã nộp (8)":"0","Số đảng viên chưa có hồ sơ (9)":"13","Tổng tiền theo hồ sơ đã khai báo":109000,"Tổng tiền đã nộp":0,"Tỷ lệ hoàn thành\n đảng phí thực tế":0},{"STT":"12","Tên đơn vị":"Chi bộ Phòng Văn hoá - Xã hội","Tổng sl đảng viên (1)":"15","Số lượng ĐV sinh hoạt chính thức (2)":"15","Số lượng ĐV sinh hoạt tạm thời (3)":"0","Số lượng ĐV đã chuyển sinh hoạt đảng tạm thời (4)":"0","Số lượng được miễn giảm ĐP (5)":"0","Chưa duyệt (6)":"0","Đã duyệt, chưa nộp (7)":"0","Đã duyệt, đã nộp (8)":"14","Số đảng viên chưa có hồ sơ (9)":"1","Tổng tiền theo hồ sơ đã khai báo":1212000,"Tổng tiền đã nộp":1212000,"Tỷ lệ hoàn thành\n đảng phí thực tế":1},{"STT":"13","Tên đơn vị":"Chi bộ Quản lý thị trường","Tổng sl đảng viên (1)":"9","Số lượng ĐV sinh hoạt chính thức (2)":"9","Số lượng ĐV sinh hoạt tạm thời (3)":"0","Số lượng ĐV đã chuyển sinh hoạt đảng tạm thời (4)":"0","Số lượng được miễn giảm ĐP (5)":"0","Chưa duyệt (6)":"1","Đã duyệt, chưa nộp (7)":"0","Đã duyệt, đã nộp (8)":"0","Số đảng viên chưa có hồ sơ (9)":"8","Tổng tiền theo hồ sơ đã khai báo":112000,"Tổng tiền đã nộp":0,"Tỷ lệ hoàn thành\n đảng phí thực tế":0},{"STT":"14","Tên đơn vị":"Chi bộ Trung tâm Chính trị Bảo Thắng","Tổng sl đảng viên (1)":"5","Số lượng ĐV sinh hoạt chính thức (2)":"5","Số lượng ĐV sinh hoạt tạm thời (3)":"0","Số lượng ĐV đã chuyển sinh hoạt đảng tạm thời (4)":"0","Số lượng được miễn giảm ĐP (5)":"0","Chưa duyệt (6)":"0","Đã duyệt, chưa nộp (7)":"0","Đã duyệt, đã nộp (8)":"5","Số đảng viên chưa có hồ sơ (9)":"0","Tổng tiền theo hồ sơ đã khai báo":582000,"Tổng tiền đã nộp":582000,"Tỷ lệ hoàn thành\n đảng phí thực tế":1},{"STT":"15","Tên đơn vị":"Chi bộ Trung tâm Dịch vụ tổng hợp","Tổng sl đảng viên (1)":"15","Số lượng ĐV sinh hoạt chính thức (2)":"15","Số lượng ĐV sinh hoạt tạm thời (3)":"0","Số lượng ĐV đã chuyển sinh hoạt đảng tạm thời (4)":"0","Số lượng được miễn giảm ĐP (5)":"0","Chưa duyệt (6)":"1","Đã duyệt, chưa nộp (7)":"0","Đã duyệt, đã nộp (8)":"0","Số đảng viên chưa có hồ sơ (9)":"14","Tổng tiền theo hồ sơ đã khai báo":69000,"Tổng tiền đã nộp":0,"Tỷ lệ hoàn thành\n đảng phí thực tế":0},{"STT":"16","Tên đơn vị":"Chi bộ Trung tâm GDNN - GDTX","Tổng sl đảng viên (1)":"19","Số lượng ĐV sinh hoạt chính thức (2)":"19","Số lượng ĐV sinh hoạt tạm thời (3)":"0","Số lượng ĐV đã chuyển sinh hoạt đảng tạm thời (4)":"0","Số lượng được miễn giảm ĐP (5)":"0","Chưa duyệt (6)":"1","Đã duyệt, chưa nộp (7)":"0","Đã duyệt, đã nộp (8)":"0","Số đảng viên chưa có hồ sơ (9)":"18","Tổng tiền theo hồ sơ đã khai báo":130000,"Tổng tiền đã nộp":0,"Tỷ lệ hoàn thành\n đảng phí thực tế":0},{"STT":"17","Tên đơn vị":"Chi bộ Trung tâm Phục vụ hành chính công","Tổng sl đảng viên (1)":"8","Số lượng ĐV sinh hoạt chính thức (2)":"8","Số lượng ĐV sinh hoạt tạm thời (3)":"0","Số lượng ĐV đã chuyển sinh hoạt đảng tạm thời (4)":"0","Số lượng được miễn giảm ĐP (5)":"0","Chưa duyệt (6)":"1","Đã duyệt, chưa nộp (7)":"0","Đã duyệt, đã nộp (8)":"0","Số đảng viên chưa có hồ sơ (9)":"7","Tổng tiền theo hồ sơ đã khai báo":84000,"Tổng tiền đã nộp":0,"Tỷ lệ hoàn thành\n đảng phí thực tế":0},{"STT":"18","Tên đơn vị":"Chi bộ Trạm y tế","Tổng sl đảng viên (1)":"22","Số lượng ĐV sinh hoạt chính thức (2)":"21","Số lượng ĐV sinh hoạt tạm thời (3)":"0","Số lượng ĐV đã chuyển sinh hoạt đảng tạm thời (4)":"0","Số lượng được miễn giảm ĐP (5)":"0","Chưa duyệt (6)":"0","Đã duyệt, chưa nộp (7)":"7","Đã duyệt, đã nộp (8)":"15","Số đảng viên chưa có hồ sơ (9)":"0","Tổng tiền theo hồ sơ đã khai báo":2039000,"Tổng tiền đã nộp":1386000,"Tỷ lệ hoàn thành\n đảng phí thực tế":0.6797},{"STT":"19","Tên đơn vị":"Chi bộ UBKT Đảng uỷ","Tổng sl đảng viên (1)":"5","Số lượng ĐV sinh hoạt chính thức (2)":"5","Số lượng ĐV sinh hoạt tạm thời (3)":"0","Số lượng ĐV đã chuyển sinh hoạt đảng tạm thời (4)":"0","Số lượng được miễn giảm ĐP (5)":"0","Chưa duyệt (6)":"0","Đã duyệt, chưa nộp (7)":"0","Đã duyệt, đã nộp (8)":"5","Số đảng viên chưa có hồ sơ (9)":"0","Tổng tiền theo hồ sơ đã khai báo":511000,"Tổng tiền đã nộp":511000,"Tỷ lệ hoàn thành\n đảng phí thực tế":1},{"STT":"20","Tên đơn vị":"Chi bộ Uỷ ban MTTQ Việt Nam xã","Tổng sl đảng viên (1)":"21","Số lượng ĐV sinh hoạt chính thức (2)":"21","Số lượng ĐV sinh hoạt tạm thời (3)":"0","Số lượng ĐV đã chuyển sinh hoạt đảng tạm thời (4)":"0","Số lượng được miễn giảm ĐP (5)":"0","Chưa duyệt (6)":"0","Đã duyệt, chưa nộp (7)":"0","Đã duyệt, đã nộp (8)":"21","Số đảng viên chưa có hồ sơ (9)":"0","Tổng tiền theo hồ sơ đã khai báo":2089000,"Tổng tiền đã nộp":2089000,"Tỷ lệ hoàn thành\n đảng phí thực tế":1},{"STT":"21","Tên đơn vị":"Chi bộ VNPT Bảo Thắng","Tổng sl đảng viên (1)":"6","Số lượng ĐV sinh hoạt chính thức (2)":"6","Số lượng ĐV sinh hoạt tạm thời (3)":"0","Số lượng ĐV đã chuyển sinh hoạt đảng tạm thời (4)":"0","Số lượng được miễn giảm ĐP (5)":"0","Chưa duyệt (6)":"1","Đã duyệt, chưa nộp (7)":"0","Đã duyệt, đã nộp (8)":"0","Số đảng viên chưa có hồ sơ (9)":"5","Tổng tiền theo hồ sơ đã khai báo":12000,"Tổng tiền đã nộp":0,"Tỷ lệ hoàn thành\n đảng phí thực tế":0},{"STT":"22","Tên đơn vị":"Chi bộ Văn phòng HĐND & UBND","Tổng sl đảng viên (1)":"20","Số lượng ĐV sinh hoạt chính thức (2)":"20","Số lượng ĐV sinh hoạt tạm thời (3)":"0","Số lượng ĐV đã chuyển sinh hoạt đảng tạm thời (4)":"0","Số lượng được miễn giảm ĐP (5)":"0","Chưa duyệt (6)":"2","Đã duyệt, chưa nộp (7)":"7","Đã duyệt, đã nộp (8)":"4","Số đảng viên chưa có hồ sơ (9)":"7","Tổng tiền theo hồ sơ đã khai báo":1286000,"Tổng tiền đã nộp":443000,"Tỷ lệ hoàn thành\n đảng phí thực tế":0.3445},{"STT":"23","Tên đơn vị":"Chi bộ Văn phòng Đảng uỷ","Tổng sl đảng viên (1)":"11","Số lượng ĐV sinh hoạt chính thức (2)":"11","Số lượng ĐV sinh hoạt tạm thời (3)":"0","Số lượng ĐV đã chuyển sinh hoạt đảng tạm thời (4)":"0","Số lượng được miễn giảm ĐP (5)":"0","Chưa duyệt (6)":"0","Đã duyệt, chưa nộp (7)":"0","Đã duyệt, đã nộp (8)":"11","Số đảng viên chưa có hồ sơ (9)":"0","Tổng tiền theo hồ sơ đã khai báo":1267000,"Tổng tiền đã nộp":1267000,"Tỷ lệ hoàn thành\n đảng phí thực tế":1},{"STT":"24","Tên đơn vị":"Chi bộ thôn An Thắng","Tổng sl đảng viên (1)":"28","Số lượng ĐV sinh hoạt chính thức (2)":"28","Số lượng ĐV sinh hoạt tạm thời (3)":"0","Số lượng ĐV đã chuyển sinh hoạt đảng tạm thời (4)":"0","Số lượng được miễn giảm ĐP (5)":"0","Chưa duyệt (6)":"1","Đã duyệt, chưa nộp (7)":"0","Đã duyệt, đã nộp (8)":"0","Số đảng viên chưa có hồ sơ (9)":"27","Tổng tiền theo hồ sơ đã khai báo":61000,"Tổng tiền đã nộp":0,"Tỷ lệ hoàn thành\n đảng phí thực tế":0},{"STT":"25","Tên đơn vị":"Chi bộ thôn An Trà","Tổng sl đảng viên (1)":"27","Số lượng ĐV sinh hoạt chính thức (2)":"27","Số lượng ĐV sinh hoạt tạm thời (3)":"0","Số lượng ĐV đã chuyển sinh hoạt đảng tạm thời (4)":"0","Số lượng được miễn giảm ĐP (5)":"0","Chưa duyệt (6)":"1","Đã duyệt, chưa nộp (7)":"0","Đã duyệt, đã nộp (8)":"0","Số đảng viên chưa có hồ sơ (9)":"26","Tổng tiền theo hồ sơ đã khai báo":44000,"Tổng tiền đã nộp":0,"Tỷ lệ hoàn thành\n đảng phí thực tế":0},{"STT":"26","Tên đơn vị":"Chi bộ thôn Cánh Địa","Tổng sl đảng viên (1)":"33","Số lượng ĐV sinh hoạt chính thức (2)":"33","Số lượng ĐV sinh hoạt tạm thời (3)":"0","Số lượng ĐV đã chuyển sinh hoạt đảng tạm thời (4)":"0","Số lượng được miễn giảm ĐP (5)":"0","Chưa duyệt (6)":"0","Đã duyệt, chưa nộp (7)":"0","Đã duyệt, đã nộp (8)":"0","Số đảng viên chưa có hồ sơ (9)":"33","Tổng tiền theo hồ sơ đã khai báo":0,"Tổng tiền đã nộp":0,"Tỷ lệ hoàn thành\n đảng phí thực tế":0},{"STT":"27","Tên đơn vị":"Chi bộ thôn Cường Thịnh","Tổng sl đảng viên (1)":"119","Số lượng ĐV sinh hoạt chính thức (2)":"119","Số lượng ĐV sinh hoạt tạm thời (3)":"0","Số lượng ĐV đã chuyển sinh hoạt đảng tạm thời (4)":"0","Số lượng được miễn giảm ĐP (5)":"0","Chưa duyệt (6)":"7","Đã duyệt, chưa nộp (7)":"20","Đã duyệt, đã nộp (8)":"11","Số đảng viên chưa có hồ sơ (9)":"81","Tổng tiền theo hồ sơ đã khai báo":1635000,"Tổng tiền đã nộp":408000,"Tỷ lệ hoàn thành\n đảng phí thực tế":0.2495},{"STT":"28","Tên đơn vị":"Chi bộ thôn Hải Niên","Tổng sl đảng viên (1)":"16","Số lượng ĐV sinh hoạt chính thức (2)":"16","Số lượng ĐV sinh hoạt tạm thời (3)":"0","Số lượng ĐV đã chuyển sinh hoạt đảng tạm thời (4)":"0","Số lượng được miễn giảm ĐP (5)":"0","Chưa duyệt (6)":"0","Đã duyệt, chưa nộp (7)":"0","Đã duyệt, đã nộp (8)":"0","Số đảng viên chưa có hồ sơ (9)":"16","Tổng tiền theo hồ sơ đã khai báo":0,"Tổng tiền đã nộp":0,"Tỷ lệ hoàn thành\n đảng phí thực tế":0},{"STT":"29","Tên đơn vị":"Chi bộ thôn Khe Mụ","Tổng sl đảng viên (1)":"27","Số lượng ĐV sinh hoạt chính thức (2)":"27","Số lượng ĐV sinh hoạt tạm thời (3)":"0","Số lượng ĐV đã chuyển sinh hoạt đảng tạm thời (4)":"0","Số lượng được miễn giảm ĐP (5)":"0","Chưa duyệt (6)":"0","Đã duyệt, chưa nộp (7)":"0","Đã duyệt, đã nộp (8)":"0","Số đảng viên chưa có hồ sơ (9)":"27","Tổng tiền theo hồ sơ đã khai báo":0,"Tổng tiền đã nộp":0,"Tỷ lệ hoàn thành\n đảng phí thực tế":0},{"STT":"30","Tên đơn vị":"Chi bộ thôn Khe Đền","Tổng sl đảng viên (1)":"13","Số lượng ĐV sinh hoạt chính thức (2)":"13","Số lượng ĐV sinh hoạt tạm thời (3)":"0","Số lượng ĐV đã chuyển sinh hoạt đảng tạm thời (4)":"0","Số lượng được miễn giảm ĐP (5)":"0","Chưa duyệt (6)":"0","Đã duyệt, chưa nộp (7)":"0","Đã duyệt, đã nộp (8)":"0","Số đảng viên chưa có hồ sơ (9)":"13","Tổng tiền theo hồ sơ đã khai báo":0,"Tổng tiền đã nộp":0,"Tỷ lệ hoàn thành\n đảng phí thực tế":0},{"STT":"31","Tên đơn vị":"Chi bộ thôn Làng Chưng","Tổng sl đảng viên (1)":"21","Số lượng ĐV sinh hoạt chính thức (2)":"21","Số lượng ĐV sinh hoạt tạm thời (3)":"0","Số lượng ĐV đã chuyển sinh hoạt đảng tạm thời (4)":"0","Số lượng được miễn giảm ĐP (5)":"0","Chưa duyệt (6)":"0","Đã duyệt, chưa nộp (7)":"0","Đã duyệt, đã nộp (8)":"0","Số đảng viên chưa có hồ sơ (9)":"21","Tổng tiền theo hồ sơ đã khai báo":0,"Tổng tiền đã nộp":0,"Tỷ lệ hoàn thành\n đảng phí thực tế":0},{"STT":"32","Tên đơn vị":"Chi bộ thôn Làng Giàng","Tổng sl đảng viên (1)":"30","Số lượng ĐV sinh hoạt chính thức (2)":"30","Số lượng ĐV sinh hoạt tạm thời (3)":"0","Số lượng ĐV đã chuyển sinh hoạt đảng tạm thời (4)":"0","Số lượng được miễn giảm ĐP (5)":"0","Chưa duyệt (6)":"0","Đã duyệt, chưa nộp (7)":"0","Đã duyệt, đã nộp (8)":"0","Số đảng viên chưa có hồ sơ (9)":"30","Tổng tiền theo hồ sơ đã khai báo":0,"Tổng tiền đã nộp":0,"Tỷ lệ hoàn thành\n đảng phí thực tế":0},{"STT":"33","Tên đơn vị":"Chi bộ thôn Lượt","Tổng sl đảng viên (1)":"34","Số lượng ĐV sinh hoạt chính thức (2)":"34","Số lượng ĐV sinh hoạt tạm thời (3)":"0","Số lượng ĐV đã chuyển sinh hoạt đảng tạm thời (4)":"0","Số lượng được miễn giảm ĐP (5)":"0","Chưa duyệt (6)":"0","Đã duyệt, chưa nộp (7)":"0","Đã duyệt, đã nộp (8)":"0","Số đảng viên chưa có hồ sơ (9)":"34","Tổng tiền theo hồ sơ đã khai báo":0,"Tổng tiền đã nộp":0,"Tỷ lệ hoàn thành\n đảng phí thực tế":0},{"STT":"34","Tên đơn vị":"Chi bộ thôn Mom Đào","Tổng sl đảng viên (1)":"19","Số lượng ĐV sinh hoạt chính thức (2)":"19","Số lượng ĐV sinh hoạt tạm thời (3)":"0","Số lượng ĐV đã chuyển sinh hoạt đảng tạm thời (4)":"0","Số lượng được miễn giảm ĐP (5)":"0","Chưa duyệt (6)":"0","Đã duyệt, chưa nộp (7)":"0","Đã duyệt, đã nộp (8)":"0","Số đảng viên chưa có hồ sơ (9)":"19","Tổng tiền theo hồ sơ đã khai báo":0,"Tổng tiền đã nộp":0,"Tỷ lệ hoàn thành\n đảng phí thực tế":0},{"STT":"35","Tên đơn vị":"Chi bộ thôn Múc","Tổng sl đảng viên (1)":"28","Số lượng ĐV sinh hoạt chính thức (2)":"28","Số lượng ĐV sinh hoạt tạm thời (3)":"0","Số lượng ĐV đã chuyển sinh hoạt đảng tạm thời (4)":"0","Số lượng được miễn giảm ĐP (5)":"0","Chưa duyệt (6)":"18","Đã duyệt, chưa nộp (7)":"0","Đã duyệt, đã nộp (8)":"0","Số đảng viên chưa có hồ sơ (9)":"10","Tổng tiền theo hồ sơ đã khai báo":480000,"Tổng tiền đã nộp":0,"Tỷ lệ hoàn thành\n đảng phí thực tế":0},{"STT":"36","Tên đơn vị":"Chi bộ thôn Phú Long","Tổng sl đảng viên (1)":"58","Số lượng ĐV sinh hoạt chính thức (2)":"58","Số lượng ĐV sinh hoạt tạm thời (3)":"0","Số lượng ĐV đã chuyển sinh hoạt đảng tạm thời (4)":"0","Số lượng được miễn giảm ĐP (5)":"0","Chưa duyệt (6)":"27","Đã duyệt, chưa nộp (7)":"0","Đã duyệt, đã nộp (8)":"0","Số đảng viên chưa có hồ sơ (9)":"31","Tổng tiền theo hồ sơ đã khai báo":973000,"Tổng tiền đã nộp":0,"Tỷ lệ hoàn thành\n đảng phí thực tế":0},{"STT":"37","Tên đơn vị":"Chi bộ thôn Phú Thành","Tổng sl đảng viên (1)":"178","Số lượng ĐV sinh hoạt chính thức (2)":"178","Số lượng ĐV sinh hoạt tạm thời (3)":"0","Số lượng ĐV đã chuyển sinh hoạt đảng tạm thời (4)":"0","Số lượng được miễn giảm ĐP (5)":"0","Chưa duyệt (6)":"0","Đã duyệt, chưa nộp (7)":"94","Đã duyệt, đã nộp (8)":"18","Số đảng viên chưa có hồ sơ (9)":"66","Tổng tiền theo hồ sơ đã khai báo":4510000,"Tổng tiền đã nộp":834000,"Tỷ lệ hoàn thành\n đảng phí thực tế":0.1849},{"STT":"38","Tên đơn vị":"Chi bộ thôn Phú Thịnh","Tổng sl đảng viên (1)":"41","Số lượng ĐV sinh hoạt chính thức (2)":"41","Số lượng ĐV sinh hoạt tạm thời (3)":"0","Số lượng ĐV đã chuyển sinh hoạt đảng tạm thời (4)":"0","Số lượng được miễn giảm ĐP (5)":"0","Chưa duyệt (6)":"0","Đã duyệt, chưa nộp (7)":"0","Đã duyệt, đã nộp (8)":"0","Số đảng viên chưa có hồ sơ (9)":"41","Tổng tiền theo hồ sơ đã khai báo":0,"Tổng tiền đã nộp":0,"Tỷ lệ hoàn thành\n đảng phí thực tế":0},{"STT":"39","Tên đơn vị":"Chi bộ thôn Phố Lu","Tổng sl đảng viên (1)":"127","Số lượng ĐV sinh hoạt chính thức (2)":"127","Số lượng ĐV sinh hoạt tạm thời (3)":"0","Số lượng ĐV đã chuyển sinh hoạt đảng tạm thời (4)":"0","Số lượng được miễn giảm ĐP (5)":"0","Chưa duyệt (6)":"11","Đã duyệt, chưa nộp (7)":"0","Đã duyệt, đã nộp (8)":"0","Số đảng viên chưa có hồ sơ (9)":"115","Tổng tiền theo hồ sơ đã khai báo":442000,"Tổng tiền đã nộp":0,"Tỷ lệ hoàn thành\n đảng phí thực tế":0},{"STT":"40","Tên đơn vị":"Chi bộ thôn Quyết Tâm","Tổng sl đảng viên (1)":"47","Số lượng ĐV sinh hoạt chính thức (2)":"47","Số lượng ĐV sinh hoạt tạm thời (3)":"0","Số lượng ĐV đã chuyển sinh hoạt đảng tạm thời (4)":"0","Số lượng được miễn giảm ĐP (5)":"0","Chưa duyệt (6)":"4","Đã duyệt, chưa nộp (7)":"0","Đã duyệt, đã nộp (8)":"0","Số đảng viên chưa có hồ sơ (9)":"43","Tổng tiền theo hồ sơ đã khai báo":119000,"Tổng tiền đã nộp":0,"Tỷ lệ hoàn thành\n đảng phí thực tế":0},{"STT":"41","Tên đơn vị":"Chi bộ thôn Sơn Hà","Tổng sl đảng viên (1)":"95","Số lượng ĐV sinh hoạt chính thức (2)":"95","Số lượng ĐV sinh hoạt tạm thời (3)":"0","Số lượng ĐV đã chuyển sinh hoạt đảng tạm thời (4)":"0","Số lượng được miễn giảm ĐP (5)":"0","Chưa duyệt (6)":"7","Đã duyệt, chưa nộp (7)":"0","Đã duyệt, đã nộp (8)":"0","Số đảng viên chưa có hồ sơ (9)":"88","Tổng tiền theo hồ sơ đã khai báo":189000,"Tổng tiền đã nộp":0,"Tỷ lệ hoàn thành\n đảng phí thực tế":0},{"STT":"42","Tên đơn vị":"Chi bộ thôn Sơn Hải","Tổng sl đảng viên (1)":"56","Số lượng ĐV sinh hoạt chính thức (2)":"56","Số lượng ĐV sinh hoạt tạm thời (3)":"0","Số lượng ĐV đã chuyển sinh hoạt đảng tạm thời (4)":"0","Số lượng được miễn giảm ĐP (5)":"4","Chưa duyệt (6)":"0","Đã duyệt, chưa nộp (7)":"2","Đã duyệt, đã nộp (8)":"0","Số đảng viên chưa có hồ sơ (9)":"49","Tổng tiền theo hồ sơ đã khai báo":51000,"Tổng tiền đã nộp":0,"Tỷ lệ hoàn thành\n đảng phí thực tế":0},{"STT":"43","Tên đơn vị":"Chi bộ thôn Thái Niên","Tổng sl đảng viên (1)":"18","Số lượng ĐV sinh hoạt chính thức (2)":"18","Số lượng ĐV sinh hoạt tạm thời (3)":"0","Số lượng ĐV đã chuyển sinh hoạt đảng tạm thời (4)":"0","Số lượng được miễn giảm ĐP (5)":"0","Chưa duyệt (6)":"0","Đã duyệt, chưa nộp (7)":"0","Đã duyệt, đã nộp (8)":"0","Số đảng viên chưa có hồ sơ (9)":"18","Tổng tiền theo hồ sơ đã khai báo":0,"Tổng tiền đã nộp":0,"Tỷ lệ hoàn thành\n đảng phí thực tế":0},{"STT":"44","Tên đơn vị":"Chi bộ thôn Tân Thành","Tổng sl đảng viên (1)":"54","Số lượng ĐV sinh hoạt chính thức (2)":"54","Số lượng ĐV sinh hoạt tạm thời (3)":"0","Số lượng ĐV đã chuyển sinh hoạt đảng tạm thời (4)":"0","Số lượng được miễn giảm ĐP (5)":"0","Chưa duyệt (6)":"0","Đã duyệt, chưa nộp (7)":"0","Đã duyệt, đã nộp (8)":"0","Số đảng viên chưa có hồ sơ (9)":"54","Tổng tiền theo hồ sơ đã khai báo":0,"Tổng tiền đã nộp":0,"Tỷ lệ hoàn thành\n đảng phí thực tế":0},{"STT":"45","Tên đơn vị":"Chi bộ thôn Đo Ngoài","Tổng sl đảng viên (1)":"29","Số lượng ĐV sinh hoạt chính thức (2)":"29","Số lượng ĐV sinh hoạt tạm thời (3)":"0","Số lượng ĐV đã chuyển sinh hoạt đảng tạm thời (4)":"0","Số lượng được miễn giảm ĐP (5)":"0","Chưa duyệt (6)":"4","Đã duyệt, chưa nộp (7)":"0","Đã duyệt, đã nộp (8)":"0","Số đảng viên chưa có hồ sơ (9)":"25","Tổng tiền theo hồ sơ đã khai báo":79000,"Tổng tiền đã nộp":0,"Tỷ lệ hoàn thành\n đảng phí thực tế":0},{"STT":"46","Tên đơn vị":"Chi bộ thôn Đồng Tâm","Tổng sl đảng viên (1)":"38","Số lượng ĐV sinh hoạt chính thức (2)":"38","Số lượng ĐV sinh hoạt tạm thời (3)":"0","Số lượng ĐV đã chuyển sinh hoạt đảng tạm thời (4)":"0","Số lượng được miễn giảm ĐP (5)":"0","Chưa duyệt (6)":"1","Đã duyệt, chưa nộp (7)":"0","Đã duyệt, đã nộp (8)":"0","Số đảng viên chưa có hồ sơ (9)":"37","Tổng tiền theo hồ sơ đã khai báo":12000,"Tổng tiền đã nộp":0,"Tỷ lệ hoàn thành\n đảng phí thực tế":0},{"STT":"47","Tên đơn vị":"Chi bộ Điện lực Bảo Thắng","Tổng sl đảng viên (1)":"21","Số lượng ĐV sinh hoạt chính thức (2)":"21","Số lượng ĐV sinh hoạt tạm thời (3)":"0","Số lượng ĐV đã chuyển sinh hoạt đảng tạm thời (4)":"0","Số lượng được miễn giảm ĐP (5)":"0","Chưa duyệt (6)":"2","Đã duyệt, chưa nộp (7)":"0","Đã duyệt, đã nộp (8)":"0","Số đảng viên chưa có hồ sơ (9)":"19","Tổng tiền theo hồ sơ đã khai báo":365000,"Tổng tiền đã nộp":0,"Tỷ lệ hoàn thành\n đảng phí thực tế":0},{"STT":"48","Tên đơn vị":"Đảng bộ Trung tâm Y tế khu vực Bảo Thắng","Tổng sl đảng viên (1)":"201","Số lượng ĐV sinh hoạt chính thức (2)":"201","Số lượng ĐV sinh hoạt tạm thời (3)":"0","Số lượng ĐV đã chuyển sinh hoạt đảng tạm thời (4)":"0","Số lượng được miễn giảm ĐP (5)":"0","Chưa duyệt (6)":"90","Đã duyệt, chưa nộp (7)":"0","Đã duyệt, đã nộp (8)":"0","Số đảng viên chưa có hồ sơ (9)":"110","Tổng tiền theo hồ sơ đã khai báo":8435000,"Tổng tiền đã nộp":0,"Tỷ lệ hoàn thành\n đảng phí thực tế":0},{"STT":"49","Tên đơn vị":"Đảng bộ Trường Mầm non Họa Mi","Tổng sl đảng viên (1)":"50","Số lượng ĐV sinh hoạt chính thức (2)":"50","Số lượng ĐV sinh hoạt tạm thời (3)":"0","Số lượng ĐV đã chuyển sinh hoạt đảng tạm thời (4)":"0","Số lượng được miễn giảm ĐP (5)":"0","Chưa duyệt (6)":"0","Đã duyệt, chưa nộp (7)":"5","Đã duyệt, đã nộp (8)":"42","Số đảng viên chưa có hồ sơ (9)":"3","Tổng tiền theo hồ sơ đã khai báo":4736000,"Tổng tiền đã nộp":4260000,"Tỷ lệ hoàn thành\n đảng phí thực tế":0.8995},{"STT":"50","Tên đơn vị":"Đảng bộ Trường PTDTNT THCS & THPT","Tổng sl đảng viên (1)":"38","Số lượng ĐV sinh hoạt chính thức (2)":"38","Số lượng ĐV sinh hoạt tạm thời (3)":"0","Số lượng ĐV đã chuyển sinh hoạt đảng tạm thời (4)":"0","Số lượng được miễn giảm ĐP (5)":"0","Chưa duyệt (6)":"1","Đã duyệt, chưa nộp (7)":"0","Đã duyệt, đã nộp (8)":"4","Số đảng viên chưa có hồ sơ (9)":"33","Tổng tiền theo hồ sơ đã khai báo":707000,"Tổng tiền đã nộp":586000,"Tỷ lệ hoàn thành\n đảng phí thực tế":0.8289},{"STT":"51","Tên đơn vị":"Đảng bộ Trường THCS Phố Lu","Tổng sl đảng viên (1)":"81","Số lượng ĐV sinh hoạt chính thức (2)":"81","Số lượng ĐV sinh hoạt tạm thời (3)":"0","Số lượng ĐV đã chuyển sinh hoạt đảng tạm thời (4)":"0","Số lượng được miễn giảm ĐP (5)":"0","Chưa duyệt (6)":"3","Đã duyệt, chưa nộp (7)":"0","Đã duyệt, đã nộp (8)":"78","Số đảng viên chưa có hồ sơ (9)":"0","Tổng tiền theo hồ sơ đã khai báo":11160000,"Tổng tiền đã nộp":10692000,"Tỷ lệ hoàn thành\n đảng phí thực tế":0.9581},{"STT":"52","Tên đơn vị":"Đảng bộ Trường THCS Thái Niên","Tổng sl đảng viên (1)":"45","Số lượng ĐV sinh hoạt chính thức (2)":"45","Số lượng ĐV sinh hoạt tạm thời (3)":"0","Số lượng ĐV đã chuyển sinh hoạt đảng tạm thời (4)":"0","Số lượng được miễn giảm ĐP (5)":"0","Chưa duyệt (6)":"12","Đã duyệt, chưa nộp (7)":"27","Đã duyệt, đã nộp (8)":"3","Số đảng viên chưa có hồ sơ (9)":"3","Tổng tiền theo hồ sơ đã khai báo":5521000,"Tổng tiền đã nộp":439000,"Tỷ lệ hoàn thành\n đảng phí thực tế":0.0795},{"STT":"53","Tên đơn vị":"Đảng bộ Trường THPT số 1","Tổng sl đảng viên (1)":"49","Số lượng ĐV sinh hoạt chính thức (2)":"49","Số lượng ĐV sinh hoạt tạm thời (3)":"0","Số lượng ĐV đã chuyển sinh hoạt đảng tạm thời (4)":"0","Số lượng được miễn giảm ĐP (5)":"0","Chưa duyệt (6)":"2","Đã duyệt, chưa nộp (7)":"0","Đã duyệt, đã nộp (8)":"0","Số đảng viên chưa có hồ sơ (9)":"47","Tổng tiền theo hồ sơ đã khai báo":235000,"Tổng tiền đã nộp":0,"Tỷ lệ hoàn thành\n đảng phí thực tế":0},{"STT":"54","Tên đơn vị":"Đảng bộ Trường Tiểu học Phố Lu","Tổng sl đảng viên (1)":"107","Số lượng ĐV sinh hoạt chính thức (2)":"107","Số lượng ĐV sinh hoạt tạm thời (3)":"0","Số lượng ĐV đã chuyển sinh hoạt đảng tạm thời (4)":"0","Số lượng được miễn giảm ĐP (5)":"0","Chưa duyệt (6)":"0","Đã duyệt, chưa nộp (7)":"0","Đã duyệt, đã nộp (8)":"107","Số đảng viên chưa có hồ sơ (9)":"0","Tổng tiền theo hồ sơ đã khai báo":15293000,"Tổng tiền đã nộp":15293000,"Tỷ lệ hoàn thành\n đảng phí thực tế":1},{"STT":"55","Tên đơn vị":"Đảng bộ Trường Tiểu học Thái Niên","Tổng sl đảng viên (1)":"58","Số lượng ĐV sinh hoạt chính thức (2)":"58","Số lượng ĐV sinh hoạt tạm thời (3)":"0","Số lượng ĐV đã chuyển sinh hoạt đảng tạm thời (4)":"0","Số lượng được miễn giảm ĐP (5)":"0","Chưa duyệt (6)":"30","Đã duyệt, chưa nộp (7)":"0","Đã duyệt, đã nộp (8)":"0","Số đảng viên chưa có hồ sơ (9)":"28","Tổng tiền theo hồ sơ đã khai báo":3950000,"Tổng tiền đã nộp":0,"Tỷ lệ hoàn thành\n đảng phí thực tế":0},{"STT":"56","Tên đơn vị":"Đảng bộ Trường mầm non Bình Minh","Tổng sl đảng viên (1)":"98","Số lượng ĐV sinh hoạt chính thức (2)":"98","Số lượng ĐV sinh hoạt tạm thời (3)":"0","Số lượng ĐV đã chuyển sinh hoạt đảng tạm thời (4)":"0","Số lượng được miễn giảm ĐP (5)":"0","Chưa duyệt (6)":"0","Đã duyệt, chưa nộp (7)":"2","Đã duyệt, đã nộp (8)":"94","Số đảng viên chưa có hồ sơ (9)":"2","Tổng tiền theo hồ sơ đã khai báo":10218000,"Tổng tiền đã nộp":10012000,"Tỷ lệ hoàn thành\n đảng phí thực tế":0.9798}];// 56 đơn vị trực thuộc Đảng bộ xã Bảo Thắng (số liệu dự phòng 21/10/2026)
+const INITIAL_UNITS=[];// chưa có số liệu Mường Khương: sẽ lấy từ Google Sheet khi kết nối
 const KEYS={stt:'STT',name:'Tên đơn vị',members:'Tổng sl đảng viên (1)',pending:'Chưa duyệt (6)',paidCount:'Đã duyệt, đã nộp (8)',unfiled:'Số đảng viên chưa có hồ sơ (9)',declared:'Tổng tiền theo hồ sơ đã khai báo',paid:'Tổng tiền đã nộp',progress:'Tỷ lệ hoàn thành\n đảng phí thực tế',exempt:'Số lượng được miễn giảm ĐP (5)',moved:'Số lượng ĐV đã chuyển sinh hoạt đảng tạm thời (4)',approved:'Đã duyệt, chưa nộp (7)'};
 const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
 const REDUCED=/[?&]calm=1/.test(location.search);// thêm ?calm=1 vào địa chỉ nếu muốn tắt chuyển động
@@ -870,18 +1099,18 @@ const short=r=>nm(r).replace(/^(Chi bộ|Đảng bộ)\s+/,'');
 const cls=r=>v(r,'due')>0&&v(r,'paidCount')>=v(r,'due')?'complete':v(r,'paidCount')>0?'partial':'empty';
 function status(r){const c=cls(r);if(c==='complete')return['Đã hoàn thành','done'];if(c==='partial')return['Đang thu','partial'];if(v(r,'members')>0)return['Chưa phát sinh','empty'];return['Chưa cập nhật','empty']}
 
-let units=[],rankOf=new Map(),pendingRows=[],pendingHeaders=[],dataStamp='21/10/2026',dataSrc='backup';
-let payments=[];try{payments=JSON.parse(localStorage.getItem('bt_payments')||'[]')}catch(e){}
+let units=[],rankOf=new Map(),pendingRows=[],pendingHeaders=[],dataStamp='',dataSrc='backup';
+let payments=[];try{payments=JSON.parse(localStorage.getItem('mk_payments')||'[]')}catch(e){}
 const state={filter:'all',sort:{k:'rank',dir:1},played:false};
 
 // ---- Đọc số liệu từ Google Sheet (Apps Script doGet?action=read) ----
-const SHEET_EP_DEFAULT='https://script.google.com/macros/s/AKfycbxAaE46jDGIDki4cYGffdymtqMqJDfnutoP7QsVgLM8kyMu-3gpBxfdEZGn8HMsWrR1/exec';// dán URL Web App /exec ở đây để mọi người mở trang đều đọc từ Google Sheet
-function sheetEndpoint(){let e='';try{e=localStorage.getItem('bt_endpoint')||''}catch(_){}const r=normEndpoint(SHEET_EP_DEFAULT||e);return r.url||null}
-function jsonp(url,ms){return new Promise((res,rej)=>{const cb='__bt_'+Date.now()+Math.random().toString(36).slice(2),sc=document.createElement('script');let ok=false;
+const SHEET_EP_DEFAULT='';// dán URL Web App /exec ở đây để mọi người mở trang đều đọc từ Google Sheet
+function sheetEndpoint(){let e='';try{e=localStorage.getItem('mk_endpoint')||''}catch(_){}const r=normEndpoint(SHEET_EP_DEFAULT||e);return r.url||null}
+function jsonp(url,ms){return new Promise((res,rej)=>{const cb='__mk_'+Date.now()+Math.random().toString(36).slice(2),sc=document.createElement('script');let ok=false;
   const fin=(e,v)=>{clearTimeout(tm);delete window[cb];sc.remove();e?rej(e):res(v)};const tm=setTimeout(()=>fin(new Error('timeout')),ms||12000);
   window[cb]=d=>{ok=true;fin(null,d)};sc.onerror=()=>fin(new Error('load'));sc.src=url+(url.includes('?')?'&':'?')+'callback='+cb+'&t='+Date.now();document.head.appendChild(sc)})}
 const nkey=x=>String(x||'').toLocaleLowerCase('vi').replace(/[^\p{L}\p{N}]+/gu,'');
-let liveUnits=[],viewKey=null,msnap={};try{msnap=JSON.parse(localStorage.getItem('bt_msnap')||'{}')||{}}catch(_){}
+let liveUnits=[],viewKey=null,msnap={};try{msnap=JSON.parse(localStorage.getItem('mk_msnap')||'{}')||{}}catch(_){}
 const curKey=()=>{const d=new Date();return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')};
 const viewingPast=()=>!!(viewKey&&viewKey!==curKey()&&msnap[viewKey]);
 function applyView(){const src=viewingPast()?msnap[viewKey].rows:liveUnits;
@@ -909,19 +1138,19 @@ function applySheet(d){
 async function loadFromSheet(){const ep=sheetEndpoint();if(!ep){dataSrc='backup';return{state:'noep'}}
   const done=r=>{dataSrc=r.state==='ok'?'sheet':(dataSrc==='sheet'||dataSrc==='cache'?dataSrc:'backup');if(r.state==='ok'){setLoading(false);showBackupNote(false)}return r};
   try{const d=await jsonp(ep+'?action=read');if(!d||!d.ok)return done({state:'bad'});const hit=applySheet(d);
-    if(hit){try{localStorage.setItem('bt_cache',JSON.stringify({headers:d.headers,rows:d.rows,lastSync:d.lastSync||null,t:Date.now()}))}catch(_){}}
+    if(hit){try{localStorage.setItem('mk_cache',JSON.stringify({headers:d.headers,rows:d.rows,lastSync:d.lastSync||null,t:Date.now()}))}catch(_){}}
     return done(hit?{state:'ok',hit,lastSync:d.lastSync}:{state:'empty',lastSync:d.lastSync})}catch(e){return done({state:'fail'})}}
 /* trạng thái đang tải / số liệu dự phòng */
 const BACKUP_STAMP='21/10/2026';
 function setLoading(on){document.body.classList.toggle('bt-loading',!!on);const n=$('#loadNote');if(!n)return;if(on){n.className='loadnote';n.textContent='Đang tải số liệu…';n.hidden=false}else if(n.className==='loadnote')n.hidden=true}
-function showBackupNote(on){const n=$('#loadNote');if(!n)return;if(on){n.className='loadnote warn';n.textContent='Chưa kết nối được Google Sheet, đang hiển thị số liệu dự phòng ngày '+BACKUP_STAMP+'.';n.hidden=false}else if(n.className==='loadnote warn')n.hidden=true}
+function showBackupNote(on){const n=$('#loadNote');if(!n)return;if(on){n.className='loadnote warn';n.textContent=INITIAL_UNITS.length?'Chưa kết nối được Google Sheet, đang hiển thị số liệu dự phòng ngày '+BACKUP_STAMP+'.':'Chưa kết nối nguồn số liệu của Đảng bộ xã Mường Khương. Số liệu sẽ hiển thị ngay khi nối Google Sheet.';n.hidden=false}else if(n.className==='loadnote warn')n.hidden=true}
 
 /* ===== Thu theo tháng ===== */
 const MONTH_TAB='Thu theo tháng';
 const monthTab=k=>'Thang'+(+k.slice(5))+(+k.slice(0,4)===new Date().getFullYear()?'':'-'+k.slice(0,4));// mỗi tháng một sheet: Thang1…Thang12 (năm khác: Thang10-2025)
 const MCOLS=['STT','Tên đơn vị','Tổng sl đảng viên (1)','Số lượng ĐV sinh hoạt chính thức (2)','Số lượng ĐV sinh hoạt tạm thời (3)','Số lượng ĐV đã chuyển sinh hoạt đảng tạm thời (4)','Số lượng được miễn giảm ĐP (5)','Chưa duyệt (6)','Đã duyệt, chưa nộp (7)','Đã duyệt, đã nộp (8)','Số đảng viên chưa có hồ sơ (9)','Tổng tiền theo hồ sơ đã khai báo','Tổng tiền đã nộp','Tỷ lệ hoàn thành\n đảng phí thực tế'];
 const MGROUP=['STT','Tên đơn vị','Đảng viên','','','','','Hồ sơ đảng phí','','','','Số tiền','',''];
-let monthly={};try{monthly=JSON.parse(localStorage.getItem('bt_monthly')||'{}')||{}}catch(_){}
+let monthly={};try{monthly=JSON.parse(localStorage.getItem('mk_monthly')||'{}')||{}}catch(_){}
 const mkey=d=>d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0');
 const mshort=n=>n>=1e6?(Math.round(n/1e5)/10).toLocaleString('vi-VN')+' tr':n>=1e3?Math.round(n/1e3).toLocaleString('vi-VN')+' k':String(n);
 function monthlySeries(year){
@@ -975,7 +1204,7 @@ async function loadMonthTab(k){const ep=sheetEndpoint();if(!ep||msnap[k])return 
       if(M&&(k===curKey()||sigOf(M.next)!==sigOf(liveUnits))){msnap[k]={t:d.lastSync?new Date(d.lastSync).getTime()||Date.now():Date.now(),rows:M.next};
         monthly[k]={cum:M.next.reduce((a,r)=>a+v(r,'paid'),0)};saveMonthly();return true}}}catch(_){}
   return false}
-function saveMonthly(){try{localStorage.setItem('bt_msnap',JSON.stringify(msnap));localStorage.setItem('bt_monthly',JSON.stringify(monthly))}catch(_){}}
+function saveMonthly(){try{localStorage.setItem('mk_msnap',JSON.stringify(msnap));localStorage.setItem('mk_monthly',JSON.stringify(monthly))}catch(_){}}
 async function syncMonthly(){
   const ep=sheetEndpoint();if(!ep)return;
   let remote=null;
@@ -985,9 +1214,9 @@ async function syncMonthly(){
   {const live=sigOf(liveUnits),cur=curKey();Object.keys(msnap).forEach(k=>{if(k!==cur&&sigOf(msnap[k].rows)===live){delete msnap[k];delete monthly[k];purged++}});
    const lc=totals().paid;(remote||[]).forEach(r=>{const k=String(r[0]||'').trim(),c=pnum(r[1]);if(/^\d{4}-\d{2}$/.test(k)&&c>=0&&!(k in monthly)){if(k!==cur&&c===lc&&!msnap[k]){purged++;return}monthly[k]={cum:c}}});
    if(purged)saveMonthly()}
-  {const cur0=curKey();let tried={};try{tried=JSON.parse(localStorage.getItem('bt_mtried')||'{}')||{}}catch(_){}
+  {const cur0=curKey();let tried={};try{tried=JSON.parse(localStorage.getItem('mk_mtried')||'{}')||{}}catch(_){}
    const now=Date.now(),want=Object.keys(monthly).filter(k=>k!==cur0&&!msnap[k]&&k<cur0&&!(tried[k]&&now-tried[k]<864e5));
-   if(want.length)Promise.all(want.map(async k=>{const ok=await loadMonthTab(k);if(!ok){tried[k]=Date.now();try{localStorage.setItem('bt_mtried',JSON.stringify(tried))}catch(_){}}return ok})).then(r=>{if(r.some(Boolean))renderMonthly()})}
+   if(want.length)Promise.all(want.map(async k=>{const ok=await loadMonthTab(k);if(!ok){tried[k]=Date.now();try{localStorage.setItem('mk_mtried',JSON.stringify(tried))}catch(_){}}return ok})).then(r=>{if(r.some(Boolean))renderMonthly()})}
   const ck=mkey(new Date()),cum=totals().paid;
   const snapNow=JSON.stringify(liveUnits);
   const changed=!msnap[ck]||JSON.stringify(msnap[ck].rows)!==snapNow||!monthly[ck]||monthly[ck].cum!==cum;
@@ -1001,9 +1230,9 @@ try{const io=new IntersectionObserver(es=>es.forEach(e=>e.target.classList.toggl
 document.addEventListener('visibilitychange',()=>document.documentElement.classList.toggle('nanim',document.hidden));
 function start(){
   liveUnits=[...INITIAL_UNITS];applyView();fillSyncMonth();
-  try{$('#endpoint').value=localStorage.getItem('bt_endpoint')||'';$('#syncToken').value=localStorage.getItem('bt_token')||''}catch(e){}
+  try{$('#endpoint').value=localStorage.getItem('mk_endpoint')||'';$('#syncToken').value=localStorage.getItem('mk_token')||''}catch(e){}
   const hasEp=!!sheetEndpoint();let cached=null;
-  try{cached=JSON.parse(localStorage.getItem('bt_cache')||'null')}catch(_){}
+  try{cached=JSON.parse(localStorage.getItem('mk_cache')||'null')}catch(_){}
   if(hasEp&&cached&&Array.isArray(cached.headers)&&applySheet({ok:true,headers:cached.headers,rows:cached.rows,lastSync:cached.lastSync})){dataSrc='cache'}
   else{dataSrc=hasEp?'loading':'backup';if(hasEp)setLoading(true);else showBackupNote(true)}
   render();
@@ -1205,15 +1434,15 @@ $('#ttCopy').onclick=()=>copyText($('#ttText').innerText);
 const IS_PHONE=/Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
 function unitMsg(r){
   const p=Math.max(0,Math.min(1,v(r,'progress'))),url=cbUrl(cbSlug(r)),left=Math.max(0,v(r,'declared')-v(r,'paid'));
-  if(cls(r)==='complete')return `[Đảng ủy xã Bảo Thắng] ${nm(r)} đã hoàn thành thu nộp đảng phí ${monthLabel().toLowerCase()}: ${num(v(r,'paidCount'))}/${num(v(r,'due'))} đảng viên đã nộp (100%). Cảm ơn chi bộ! Chi tiết: ${url}`;
+  if(cls(r)==='complete')return `[Đảng ủy xã Mường Khương] ${nm(r)} đã hoàn thành thu nộp đảng phí ${monthLabel().toLowerCase()}: ${num(v(r,'paidCount'))}/${num(v(r,'due'))} đảng viên đã nộp (100%). Cảm ơn chi bộ! Chi tiết: ${url}`;
   const parts=[];if(v(r,'noRecord'))parts.push(`${num(v(r,'noRecord'))} đảng viên chưa có hồ sơ`);if(v(r,'pending'))parts.push(`${num(v(r,'pending'))} hồ sơ chưa được duyệt`);if(v(r,'approved'))parts.push(`${num(v(r,'approved'))} đảng viên đã duyệt nhưng chưa nộp`);if(left)parts.push(`còn phải thu ${money(left)}`);
-  return `[Đảng ủy xã Bảo Thắng] Đề nghị ${nm(r)} đôn đốc hoàn thành thu nộp đảng phí ${monthLabel().toLowerCase()}. Hiện đã nộp ${num(v(r,'paidCount'))}/${num(v(r,'due'))} đảng viên (${pct(p)})${parts.length?'; '+parts.join(', '):''}. Chi tiết: ${url}`;
+  return `[Đảng ủy xã Mường Khương] Đề nghị ${nm(r)} đôn đốc hoàn thành thu nộp đảng phí ${monthLabel().toLowerCase()}. Hiện đã nộp ${num(v(r,'paidCount'))}/${num(v(r,'due'))} đảng viên (${pct(p)})${parts.length?'; '+parts.join(', '):''}. Chi tiết: ${url}`;
 }
 function allMsg(){
   const t=totals(),rate=t.due?t.paidCount/t.due:0;
   const list=units.filter(r=>v(r,'members')>0&&cls(r)!=='complete').sort((a,b)=>v(a,'progress')-v(b,'progress'));
   const lines=list.map((r,i)=>`${i+1}. ${nm(r)}: ${num(v(r,'paidCount'))}/${num(v(r,'due'))} (${pct(v(r,'progress'))})`);
-  return `[Đảng ủy xã Bảo Thắng] Tiến độ thu nộp đảng phí ${monthLabel().toLowerCase()}: toàn Đảng bộ đã nộp ${num(t.paidCount)}/${num(t.due)} đảng viên (${pct(rate)}). Đề nghị ${list.length} đơn vị sau khẩn trương hoàn thiện hồ sơ và thu nộp:\n${lines.join('\n')}\nXem chi tiết từng đơn vị: ${location.origin+location.pathname}`;
+  return `[Đảng ủy xã Mường Khương] Tiến độ thu nộp đảng phí ${monthLabel().toLowerCase()}: toàn Đảng bộ đã nộp ${num(t.paidCount)}/${num(t.due)} đảng viên (${pct(rate)}). Đề nghị ${list.length} đơn vị sau khẩn trương hoàn thiện hồ sơ và thu nộp:\n${lines.join('\n')}\nXem chi tiết từng đơn vị: ${location.origin+location.pathname}`;
 }
 function sendSms(text){location.href='sms:?&body='+encodeURIComponent(text)}
 function shareText(text,title){if(navigator.share)navigator.share({title,text}).catch(()=>{});else copyText(text)}
@@ -1239,7 +1468,7 @@ function openCb(slug,refresh){
   if(!bk){bk=document.createElement('div');bk.className='back';bk.id='cbModal';bk.setAttribute('role','dialog');bk.setAttribute('aria-modal','true');document.body.appendChild(bk);
     bk.addEventListener('click',e=>{if(e.target===bk||e.target.closest('[data-cbclose]'))closeCb()})}
   const [st,sc]=status(r),p=Math.max(0,Math.min(1,v(r,'progress'))),left=Math.max(0,v(r,'declared')-v(r,'paid')),rk=rankOf.get(r)||'–';
-  bk.innerHTML=`<div class="modal cbm"><div class="cbm-head"><small>Đảng bộ xã Bảo Thắng · ${monthLabel()}</small><h3>${esc(nm(r))}</h3><button class="cbm-x" type="button" data-cbclose aria-label="Đóng">×</button></div>
+  bk.innerHTML=`<div class="modal cbm"><div class="cbm-head"><small>Đảng bộ xã Mường Khương · ${monthLabel()}</small><h3>${esc(nm(r))}</h3><button class="cbm-x" type="button" data-cbclose aria-label="Đóng">×</button></div>
   <div class="cbm-body"><div class="cbm-top"><strong>${pct(p)}</strong><span class="pill ${sc}">${st}</span></div>
   <p class="cbm-rank">Xếp hạng <b>${rk}/${units.length}</b> đơn vị · <b>${num(v(r,'paidCount'))}/${num(v(r,'due'))}</b> đảng viên đã nộp</p>
   <div class="track"><i class="${cls(r)}" style="width:${(p*100).toFixed(1)}%"></i></div>
@@ -1276,7 +1505,7 @@ $('#savePayment').onclick=()=>{
   const unit=$('#unitSelect').value,amount=Number($('#amount').value),receipt=$('#receipt').value.trim();
   if(!amount||amount<1){toast('Nhập số tiền lớn hơn 0 để lưu giao dịch.');$('#amount').focus();return}
   payments.push({unit,amount,receipt,date:new Date().toISOString()});
-  try{localStorage.setItem('bt_payments',JSON.stringify(payments))}catch(e){}
+  try{localStorage.setItem('mk_payments',JSON.stringify(payments))}catch(e){}
   closeModal();$('#amount').value='';$('#receipt').value='';renderTx();
   toast('Đã lưu giao dịch trên thiết bị này.');
 };
@@ -1318,10 +1547,10 @@ tr{page-break-inside:avoid}
 .ft{display:flex;justify-content:space-between;margin-top:26px;page-break-inside:avoid}
 .ft .nn{font-size:13px}.ft .nn u{font-size:15px}.ft .sg{width:40%;text-align:center;font-weight:700}
 </style></head><body>
-<div class="top"><div class="l">ĐẢNG BỘ XÃ BẢO THẮNG<br>*</div><div class="r"><b>ĐẢNG CỘNG SẢN VIỆT NAM</b><i>Bảo Thắng, ${dateStr}</i></div></div>
+<div class="top"><div class="l">ĐẢNG BỘ XÃ MƯỜNG KHƯƠNG<br>*</div><div class="r"><b>ĐẢNG CỘNG SẢN VIỆT NAM</b><i>Mường Khương, ${dateStr}</i></div></div>
 <div class="tt"><h1>BÁO CÁO</h1><h2>tình hình thu nộp đảng phí trên môi trường điện tử</h2><div>-----</div><div class="src">Nguồn số liệu: bảng theo dõi thu nộp đảng phí trên môi trường điện tử, ${U.length} đơn vị trực thuộc (kỳ báo cáo: tháng ${m}/${y})</div></div>
 <h3>I. Tình hình chung</h3>
-<p>Theo số liệu thu nộp đảng phí trên môi trường điện tử, Đảng bộ xã Bảo Thắng có ${U.length} đảng bộ, chi bộ trực thuộc với tổng số ${fm(T.members)} đảng viên; số đảng viên thuộc diện phải nộp đảng phí (đã trừ miễn giảm, chuyển sinh hoạt tạm thời) là ${fm(T.due)} đồng chí.</p>
+<p>Theo số liệu thu nộp đảng phí trên môi trường điện tử, Đảng bộ xã Mường Khương có ${U.length} đảng bộ, chi bộ trực thuộc với tổng số ${fm(T.members)} đảng viên; số đảng viên thuộc diện phải nộp đảng phí (đã trừ miễn giảm, chuyển sinh hoạt tạm thời) là ${fm(T.due)} đồng chí.</p>
 <p>Đến nay có ${fm(T.paidCount)} đảng viên đã được duyệt hồ sơ và đã nộp đảng phí, đạt ${pc(rate)} số đảng viên phải nộp; tổng số tiền đã nộp ${fm(T.paid)} đồng/${fm(T.declared)} đồng theo hồ sơ đã kê khai. Còn ${fm(T.pending)} hồ sơ chưa duyệt, ${fm(T.approved)} đảng viên đã duyệt nhưng chưa nộp và ${fm(T.noRecord)} đảng viên chưa có hồ sơ.${cur&&cur.has?` Số tiền thu trong tháng ${m}/${y} là ${fm(cur.v)} đồng.`:''}</p>
 <p>Phân theo kết quả: ${done.length} đơn vị hoàn thành (100% đảng viên phải nộp đã nộp); ${doing.length} đơn vị đang thu; ${none.length} đơn vị chưa có đảng viên nộp đảng phí.</p>
 <div class="cap">Bảng 1. Một số chỉ tiêu chính</div>
@@ -1352,7 +1581,7 @@ function openReportDialog(){
   <button class="btn rptclose" type="button">Đóng</button></div>`;
   document.body.appendChild(d);
   d.onclick=e=>{if(e.target===d||e.target.classList.contains('rptclose'))d.remove()};
-  d.querySelectorAll('[data-f]').forEach(b=>b.onclick=()=>{const k=$('#rptMonth').value,f=b.dataset.f,html=reportHTML(k),base='bao-cao-dang-phi-bao-thang-'+k;
+  d.querySelectorAll('[data-f]').forEach(b=>b.onclick=()=>{const k=$('#rptMonth').value,f=b.dataset.f,html=reportHTML(k),base='bao-cao-dang-phi-muong-khuong-'+k;
     if(f==='doc')downloadFile(base+'.doc','application/msword',html);
     else if(f==='xls')downloadFile(base+'.xls','application/vnd.ms-excel',html);
     else{const ov=document.createElement('div');ov.className='rptov';ov.innerHTML='<div class="rx"><span>Xem trước báo cáo</span><span><button type="button" id="rptPrint">In / Lưu PDF</button> <button type="button" id="rptX">Đóng</button></span></div><iframe title="Báo cáo"></iframe>';document.body.appendChild(ov);
@@ -1361,17 +1590,17 @@ function openReportDialog(){
 
 /* ===== Thông báo chạy ===== */
 const NT_CLOUD=true,NT_TAB='Thông báo',NT_DEF={msg:'Đề nghị các chi bộ, đảng bộ cơ sở nộp đảng phí đầy đủ, đúng hạn hằng tháng.',color:'#12335c',size:'13.5',speed:'90'};
-let ntCfg={...NT_DEF};try{Object.assign(ntCfg,JSON.parse(localStorage.getItem('bt_notice')||'{}'))}catch(_){}
+let ntCfg={...NT_DEF};try{Object.assign(ntCfg,JSON.parse(localStorage.getItem('mk_notice')||'{}'))}catch(_){}
 function ntApply(){const t=$('#ntText');if(!t)return;t.textContent=ntCfg.msg||NT_DEF.msg;t.style.color=ntCfg.color;t.style.fontSize=ntCfg.size+'px';
   const w=$('#ntTrack').clientWidth||800;requestAnimationFrame(()=>{const len=t.scrollWidth+w;t.parentNode.style.setProperty('--nt-d',Math.max(12,len/(+ntCfg.speed||90))+'s');t.style.setProperty('--nt-d',Math.max(12,len/(+ntCfg.speed||90))+'s')})}
-function ntStore(){try{localStorage.setItem('bt_notice',JSON.stringify(ntCfg))}catch(_){}}
+function ntStore(){try{localStorage.setItem('mk_notice',JSON.stringify(ntCfg))}catch(_){}}
 async function ntLoad(){const ep=sheetEndpoint();if(!NT_CLOUD||!ep)return;
   try{const d=await jsonp(ep+'?action=read&tab='+encodeURIComponent(NT_TAB),9000);
     const r=d&&d.ok&&Array.isArray(d.rows)&&d.rows[0];
     if(r&&String(r[0]||'').trim()&&!(Array.isArray(d.headers)&&d.headers.length>5)){ntCfg={msg:String(r[0]).trim(),color:/^#[0-9a-f]{6}$/i.test(r[1])?r[1]:NT_DEF.color,size:['12','13.5','15'].includes(String(r[2]))?String(r[2]):NT_DEF.size,speed:['60','90','140'].includes(String(r[3]))?String(r[3]):NT_DEF.speed};ntStore();ntApply()}}catch(_){}}
 function ntPrev(){const p=$('#ntPrev');p.textContent=$('#ntInput').value.trim()||NT_DEF.msg;p.style.color=$('#ntColor').value;p.style.fontSize=$('#ntSize').value+'px'}
 function ntOpen(){$('#ntInput').value=ntCfg.msg;$('#ntColor').value=ntCfg.color;$('#ntSize').value=ntCfg.size;$('#ntSpeed').value=ntCfg.speed;
-  try{$('#ntToken').value=localStorage.getItem('bt_token')||''}catch(_){}$('#ntMsg').textContent='';$('#ntMsg').className='fieldmsg';ntPrev();$('#ntModal').classList.add('on');$('#ntInput').focus()}
+  try{$('#ntToken').value=localStorage.getItem('mk_token')||''}catch(_){}$('#ntMsg').textContent='';$('#ntMsg').className='fieldmsg';ntPrev();$('#ntModal').classList.add('on');$('#ntInput').focus()}
 function ntClose(){$('#ntModal').classList.remove('on')}
 $('#ntSet').onclick=ntOpen;$('#ntCancel').onclick=ntClose;
 $('#ntModal').addEventListener('click',e=>{if(e.target.id==='ntModal')ntClose()});
@@ -1383,7 +1612,7 @@ $('#ntSave').onclick=async()=>{const msg=$('#ntInput').value.trim();if(!msg){$('
   const ep=sheetEndpoint(),tk=$('#ntToken').value.trim();
   if(!tk||!(await ntOk(tk))){$('#ntMsg').textContent=tk?'Mã đồng bộ không đúng.':'Nhập mã đồng bộ để lưu thông báo.';$('#ntMsg').className='fieldmsg bad';$('#ntToken').focus();return}
   ntCfg={msg,color:$('#ntColor').value,size:$('#ntSize').value,speed:$('#ntSpeed').value};ntStore();ntApply();
-  try{localStorage.setItem('bt_token',tk)}catch(_){}
+  try{localStorage.setItem('mk_token',tk)}catch(_){}
   if(NT_CLOUD&&ep){
     try{fetch(ep,{method:'POST',mode:'no-cors',redirect:'follow',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify({tab:NT_TAB,headers:['Nội dung','Màu chữ','Cỡ chữ','Tốc độ','Cập nhật'],rows:[[msg,ntCfg.color,ntCfg.size,ntCfg.speed,new Date().toLocaleString('vi-VN',{hour12:false})]],token:tk,source:'website-notice'})})}catch(_){}
     toast('Đã lưu thông báo và gửi lên Google Sheet.')}
@@ -1394,7 +1623,7 @@ $('#reportBtn').onclick=openReportDialog;
 $('#exportBtn').onclick=()=>{
   const rows=[['Đơn vị','Tổng đảng viên','Miễn giảm','Phải nộp','Đã nộp (đảng viên)','Chưa duyệt','Chưa có hồ sơ','Tổng kê khai','Tiền đã nộp','Tỷ lệ đảng viên đã nộp'],...units.map(r=>[nm(r),v(r,'members'),v(r,'exempt'),v(r,'due'),v(r,'paidCount'),v(r,'pending'),v(r,'noRecord'),v(r,'declared'),v(r,'paid'),v(r,'progress')])];
   const csv='﻿'+rows.map(r=>r.map(x=>'"'+String(x).replaceAll('"','""')+'"').join(',')).join('\r\n');
-  const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([csv],{type:'text/csv;charset=utf-8'}));a.download='theo-doi-dang-phi-bao-thang.csv';a.click();URL.revokeObjectURL(a.href);
+  const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([csv],{type:'text/csv;charset=utf-8'}));a.download='theo-doi-dang-phi-muong-khuong.csv';a.click();URL.revokeObjectURL(a.href);
 };
 const _rf=async()=>{const x=await loadFromSheet();render();
   toast(x.state==='ok'?'Đã cập nhật số liệu từ Google Sheet.':x.state==='noep'?'Đã làm mới. Chưa cấu hình Google Sheet để tải số liệu.':x.state==='empty'?'Google Sheet chưa có dữ liệu khớp danh sách đơn vị.':'Không đọc được Google Sheet, đang hiển thị số liệu có sẵn.')};
@@ -1450,13 +1679,13 @@ function showSheetLink(){const u=($('#sheetUrl').value||'').trim(),a=$('#openShe
 ['#endpoint','#syncToken'].forEach(i=>$(i).addEventListener('input',checkEndpoint));
 $('#sheetUrl').addEventListener('input',showSheetLink);
 $('#showTok').onclick=()=>{const t=$('#syncToken');const h=t.type==='password';t.type=h?'text':'password';$('#showTok').textContent=h?'Ẩn':'Hiện'};
-try{$('#sheetUrl').value=localStorage.getItem('bt_sheet')||''}catch(e){}
+try{$('#sheetUrl').value=localStorage.getItem('mk_sheet')||''}catch(e){}
 checkEndpoint();showSheetLink();
 $('#saveEndpoint').onclick=()=>{
   const url=checkEndpoint();
   if($('#endpoint').value.trim()&&!url){toast('URL chưa đúng, xem hướng dẫn dưới ô nhập.');return}
   if(url)$('#endpoint').value=url;
-  try{localStorage.setItem('bt_endpoint',$('#endpoint').value.trim());localStorage.setItem('bt_token',$('#syncToken').value.trim());localStorage.setItem('bt_sheet',$('#sheetUrl').value.trim())}catch(e){}
+  try{localStorage.setItem('mk_endpoint',$('#endpoint').value.trim());localStorage.setItem('mk_token',$('#syncToken').value.trim());localStorage.setItem('mk_sheet',$('#sheetUrl').value.trim())}catch(e){}
   showSheetLink();checkEndpoint();toast('Đã lưu cấu hình trên thiết bị này.');
 };
 // Kiểm tra kết nối: gọi JSONP (không gửi mã đồng bộ). Script cũ có thể không hỗ trợ nên chỉ báo mức độ chắc chắn.
@@ -1491,7 +1720,7 @@ $('#syncBtn').onclick=async()=>{
   const b=$('#syncBtn');b.disabled=true;b.textContent='Đang gửi…';syncMsg('Đang gửi dữ liệu tới Apps Script…');
   try{
     let before=null;try{const d0=await jsonp(url+'?action=read',8000);before=d0&&d0.ok?(d0.lastSync||''):null}catch(_){}
-        await fetch(url,{method:'POST',mode:'no-cors',redirect:'follow',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify({headers:(()=>{const w=Math.max(pendingHeaders.length,...pendingRows.map(r=>r.length)),h=[...pendingHeaders];while(h.length<w)h.push('');return h})(),rows:normRows(),token,source:'website-bao-thang',sentAt:new Date().toISOString()})});
+        await fetch(url,{method:'POST',mode:'no-cors',redirect:'follow',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify({headers:(()=>{const w=Math.max(pendingHeaders.length,...pendingRows.map(r=>r.length)),h=[...pendingHeaders];while(h.length<w)h.push('');return h})(),rows:normRows(),token,source:'website-muong-khuong',sentAt:new Date().toISOString()})});
     if(before!==null){ // script có hỗ trợ đọc: xác nhận thật bằng thời điểm đồng bộ mới
       syncMsg('Đã gửi, đang chờ Google Sheet xác nhận…');
       for(let i=0;i<6;i++){await new Promise(r=>setTimeout(r,2500));try{const d=await jsonp(url+'?action=read',8000);if(d&&d.ok&&(d.lastSync||'')!==before){const hit=applySheet(d);if(hit)dataSrc='sheet';render();if(hit)syncMonthly();setTimeout(loadLog,800);if(hit)setTimeout(()=>syncTable(true).then(()=>loadLog()),400);
@@ -1521,7 +1750,7 @@ async function syncTable(silent){
   const stamp='Lúc '+new Date().toLocaleString('vi-VN',{hour12:false});
   try{
     const m=tableMatrix(stamp);
-    await fetch(ep,{method:'POST',mode:'no-cors',redirect:'follow',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify({tab:TABLE_TAB,headers:m.headers,rows:m.rows,token:($('#syncToken')&&$('#syncToken').value.trim())||'',source:'website-bao-thang-bang',sentAt:new Date().toISOString()})});
+    await fetch(ep,{method:'POST',mode:'no-cors',redirect:'follow',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify({tab:TABLE_TAB,headers:m.headers,rows:m.rows,token:($('#syncToken')&&$('#syncToken').value.trim())||'',source:'website-muong-khuong-bang',sentAt:new Date().toISOString()})});
     for(let i=0;i<6;i++){await new Promise(r=>setTimeout(r,2500));
       try{const d=await jsonp(ep+'?action=read&tab='+encodeURIComponent(TABLE_TAB),8000);
         if(d&&d.ok&&d.rows&&d.rows.length&&String(d.rows[0][d.rows[0].length-1])===stamp){loadLog();if(!silent)toast(`Đã đồng bộ bảng ${m.rows.length} đơn vị lên Google Sheet (tab “${TABLE_TAB}”).`);return true}}catch(_){}}
@@ -1550,7 +1779,7 @@ document.querySelectorAll('[data-page="import"]').forEach(b=>b.addEventListener(
 if(location.hash==='#import')loadLog();
 
 /* ===== Đang online & Tổng truy cập (Firebase Realtime Database) ===== */
-const FB_CFG={apiKey:"AIzaSyCmdiL9Gij6DmNKt_vke5DtAIVsfw9RacA",authDomain:"baothang-58c7c.firebaseapp.com",projectId:"baothang-58c7c",appId:"1:34523831066:web:df35491dcd2658477d6aa3",databaseURL:"https://baothang-58c7c-default-rtdb.firebaseio.com"};
+const FB_CFG=null;// chưa có Firebase riêng cho Mường Khương
 (function liveStats(){
   const set=(k,n)=>document.querySelectorAll('[data-live="'+k+'"]').forEach(e=>{e.textContent=nf.format(n)});
   const show=()=>{const a=document.getElementById('liveBar'),b=document.getElementById('livePill');if(a)a.hidden=false;if(b)b.hidden=false};
@@ -1558,7 +1787,7 @@ const FB_CFG={apiKey:"AIzaSyCmdiL9Gij6DmNKt_vke5DtAIVsfw9RacA",authDomain:"baoth
   const base='https://www.gstatic.com/firebasejs/10.12.2/';
   const go=()=>load(base+'firebase-app-compat.js').then(()=>load(base+'firebase-database-compat.js')).then(()=>{
     firebase.initializeApp(FB_CFG);const db=firebase.database();
-    let sid='';try{sid=sessionStorage.getItem('bt_sid')||'';if(!sid){sid=Math.random().toString(36).slice(2,10)+Date.now().toString(36);sessionStorage.setItem('bt_sid',sid)}}catch(_){sid=Math.random().toString(36).slice(2,10)}
+    let sid='';try{sid=sessionStorage.getItem('mk_sid')||'';if(!sid){sid=Math.random().toString(36).slice(2,10)+Date.now().toString(36);sessionStorage.setItem('mk_sid',sid)}}catch(_){sid=Math.random().toString(36).slice(2,10)}
     const me=db.ref('presence/'+sid),vr=db.ref('stats/visits'),pr=db.ref('presence');
     // Chỉ hiện số đã được máy chủ xác nhận (không dùng giá trị tạm trên máy khách)
     let pOn=false,vOn=false;
@@ -1568,8 +1797,8 @@ const FB_CFG={apiKey:"AIzaSyCmdiL9Gij6DmNKt_vke5DtAIVsfw9RacA",authDomain:"baoth
     db.ref('.info/connected').on('value',s=>{if(s.val()===true){
       me.onDisconnect().remove().then(()=>me.set(true)).then(startPresence).catch(()=>{});
     }});
-    let counted=false;try{counted=sessionStorage.getItem('bt_counted')==='1'}catch(_){}
-    if(!counted){vr.transaction(n=>(n||0)+1,(err,committed)=>{if(!err&&committed){try{sessionStorage.setItem('bt_counted','1')}catch(_){}startVisits()}})}
+    let counted=false;try{counted=sessionStorage.getItem('mk_counted')==='1'}catch(_){}
+    if(!counted){vr.transaction(n=>(n||0)+1,(err,committed)=>{if(!err&&committed){try{sessionStorage.setItem('mk_counted','1')}catch(_){}startVisits()}})}
     else{vr.get().then(()=>startVisits()).catch(()=>{})}
   }).catch(()=>{});
   if(!FB_CFG)return;
